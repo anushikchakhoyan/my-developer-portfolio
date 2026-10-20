@@ -44,8 +44,8 @@ export const SidebarNav: React.FC = () => {
                     title={s.title}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                         activeId === s.id
-                            ? "bg-[var(--color-primary)] scale-125 shadow-[0_0_12px_var(--color-primary)]"
-                            : "bg-[var(--color-border)] hover:bg-[var(--color-text-muted)]"
+                            ? "bg-(--color-primary) scale-125 shadow-[0_0_12px_var(--color-primary)]"
+                            : "bg-(--color-border) hover:bg-(--color-text-muted)"
                     }`}
                     aria-label={s.title}
                 />

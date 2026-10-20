@@ -19,14 +19,14 @@ export const TopNav: React.FC = () => {
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 h-16 px-6 md:px-16 flex items-center justify-between backdrop-blur-md bg-[oklch(from_var(--color-bg)_l_c_h_/_0.85)] border-b border-[var(--color-border)] z-50">
-            <Link href="#slide-1" className="font-serif text-xl md:text-2xl text-[var(--color-text)]">
+        <header className="fixed top-0 left-0 right-0 h-16 px-6 md:px-16 flex items-center justify-between backdrop-blur-md bg-[oklch(from_var(--color-bg)_l_c_h/0.85)] border-b border-(--color-border) z-50">
+            <Link href="#slide-1" className="font-serif text-xl md:text-2xl text-(--color-text)">
                 Anush Chakhoyan
             </Link>
 
             <button
                 onClick={toggleTheme}
-                className="w-10 h-10 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] flex items-center justify-center transition-all hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:scale-105 cursor-pointer"
+                className="w-10 h-10 rounded-full border border-(--color-border) bg-(--color-surface) text-(--color-text) flex items-center justify-center transition-all hover:border-(--color-primary) hover:text-(--color-primary) hover:scale-105 cursor-pointer"
                 aria-label="Toggle theme"
             >
                 {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}

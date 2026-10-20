@@ -33,7 +33,7 @@ export const ArchitectureGrid: React.FC = () => {
             {PIPELINE_STEPS.map((item) => (
                 <div
                     key={item.step}
-                    className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 hover:border-[var(--color-border-accent)] transition-all hover:-translate-y-1"
+                    className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6 hover:border-(--color-border-accent) transition-all hover:-translate-y-1"
                 >
           <span
               className="font-mono text-xs tracking-wider block mb-2 font-semibold"
@@ -41,8 +41,8 @@ export const ArchitectureGrid: React.FC = () => {
           >
             {item.step}
           </span>
-                    <h4 className="font-bold text-lg text-[var(--color-text)] mb-2">{item.title}</h4>
-                    <p className="text-xs text-[var(--color-text-muted)] leading-relaxed">{item.desc}</p>
+                    <h4 className="font-bold text-lg text-(--color-text) mb-2">{item.title}</h4>
+                    <p className="text-xs text-(--color-text-muted) leading-relaxed">{item.desc}</p>
                 </div>
             ))}
         </div>

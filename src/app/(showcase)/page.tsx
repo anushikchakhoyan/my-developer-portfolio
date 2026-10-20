@@ -26,13 +26,13 @@ export default function ShowcasePage() {
                 className="min-h-screen w-full flex flex-col justify-center items-center text-center px-6 pt-24 pb-16"
             >
                 <div className="max-w-3xl">
-          <span className="font-mono text-sm tracking-[3px] text-[var(--color-accent)] font-semibold mb-4 block">
+          <span className="font-mono text-sm tracking-[3px] text-(--color-accent) font-semibold mb-4 block">
             2018 → 2026 // PORTFOLIO
           </span>
-                    <h1 className="text-6xl md:text-8xl font-serif text-[var(--color-text)] mb-6 tracking-tight">
+                    <h1 className="text-6xl md:text-8xl font-serif text-(--color-text) mb-6 tracking-tight">
                         Anush.tech
                     </h1>
-                    <p className="text-base md:text-xl text-[var(--color-text-muted)] mb-8 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-base md:text-xl text-(--color-text-muted) mb-8 leading-relaxed max-w-2xl mx-auto">
                         Lead UI Architect &amp; Frontend Engineer specializing in scalable design systems, React component architecture, and high-performance web applications.
                     </p>
                     <div className="flex gap-4 justify-center">
@@ -52,11 +52,11 @@ export default function ShowcasePage() {
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
-                        <span className="font-serif text-3xl text-[var(--color-primary)] mr-2">02.</span>
-                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-[var(--color-text)]">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">02.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             About Me
                         </h2>
-                        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                        <p className="text-sm text-(--color-text-muted) mt-1">
                             UI Architect &amp; Design Systems Lead focused on scalable frontend infrastructure.
                         </p>
                     </header>
@@ -71,11 +71,11 @@ export default function ShowcasePage() {
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
-                        <span className="font-serif text-3xl text-[var(--color-primary)] mr-2">03.</span>
-                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-[var(--color-text)]">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">03.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Career Timeline
                         </h2>
-                        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                        <p className="text-sm text-(--color-text-muted) mt-1">
                             7+ years of engineering impact across global companies and platforms.
                         </p>
                     </header>
@@ -90,11 +90,11 @@ export default function ShowcasePage() {
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
-                        <span className="font-serif text-3xl text-[var(--color-primary)] mr-2">04.</span>
-                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-[var(--color-text)]">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">04.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Testimonials
                         </h2>
-                        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                        <p className="text-sm text-(--color-text-muted) mt-1">
                             Direct recommendations from engineering leads and directors.
                         </p>
                     </header>
@@ -109,11 +109,11 @@ export default function ShowcasePage() {
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
-                        <span className="font-serif text-3xl text-[var(--color-primary)] mr-2">05.</span>
-                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-[var(--color-text)]">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">05.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Design Tokens &amp; Engine
                         </h2>
-                        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                        <p className="text-sm text-(--color-text-muted) mt-1">
                             Native CSS Cascade Layers (`@layer`) &amp; OKLCH color space architecture.
                         </p>
                     </header>
@@ -128,11 +128,11 @@ export default function ShowcasePage() {
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
-                        <span className="font-serif text-3xl text-[var(--color-primary)] mr-2">06.</span>
-                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-[var(--color-text)]">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">06.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Design System Architecture
                         </h2>
-                        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                        <p className="text-sm text-(--color-text-muted) mt-1">
                             Scalable end-to-end component engineering pipeline.
                         </p>
                     </header>
@@ -147,11 +147,11 @@ export default function ShowcasePage() {
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
-                        <span className="font-serif text-3xl text-[var(--color-primary)] mr-2">07.</span>
-                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-[var(--color-text)]">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">07.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Contact &amp; Collaboration
                         </h2>
-                        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                        <p className="text-sm text-(--color-text-muted) mt-1">
                             Open for UI Architecture consultations, design system audits, and senior engineering roles.
                         </p>
                     </header>

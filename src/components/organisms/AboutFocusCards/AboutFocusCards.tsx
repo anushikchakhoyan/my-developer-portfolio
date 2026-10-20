@@ -18,23 +18,23 @@ export const AboutFocusCards: React.FC = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8">
             {/* Left Column: Bio Card */}
-            <div className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
-                <h3 className="font-serif text-3xl text-[var(--color-primary)] mb-3">
+            <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-8">
+                <h3 className="font-serif text-3xl text-(--color-primary) mb-3">
                     hey there, stranger.
                 </h3>
-                <p className="text-[var(--color-text-muted)] mb-4 text-sm">
+                <p className="text-(--color-text-muted) mb-4 text-sm">
                     this is my personal space, and welcome.
                 </p>
-                <p className="text-sm leading-relaxed mb-4 text-[var(--color-text)]">
+                <p className="text-sm leading-relaxed mb-4 text-(--color-text)">
                     Frontend Engineer with 7+ years building responsive, production UIs — in React, with hands-on TypeScript and AI-assisted workflows — for platforms spanning iGaming, E-commerce, Admin tooling, and Edtech.
                 </p>
-                <p className="text-sm leading-relaxed mb-8 text-[var(--color-text)]">
+                <p className="text-sm leading-relaxed mb-8 text-(--color-text)">
                     The core specialty is turning fast-moving product requirements into clean, maintainable component architecture — from Figma handoff and design-system consistency to accessibility and testing.
                 </p>
 
                 <div className="flex flex-col items-start sm:items-center gap-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-hover)] text-xs text-[var(--color-accent)] font-mono">
-                        <span className="w-2 h-2 rounded-full bg-[var(--color-accent)]" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-border) bg-(--color-surface-hover) text-xs text-(--color-accent) font-mono">
+                        <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
                         Available Worldwide / Remote · Hybrid (Dubai)
                     </div>
                     <Link href="#contact">
@@ -46,7 +46,7 @@ export const AboutFocusCards: React.FC = () => {
             </div>
 
             {/* Right Column: Focus Areas */}
-            <div className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 hover:border-[var(--color-border-accent)] transition-all">
+            <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-8 hover:border-(--color-border-accent) transition-all">
                 <div className="flex justify-between items-center mb-6">
                     <h4 className="font-bold text-lg text-(--color-text)">Core Focus Areas</h4>
                     <span className="font-mono text-xs text-(--color-accent) tracking-wider">
@@ -58,15 +58,15 @@ export const AboutFocusCards: React.FC = () => {
                     {FOCUS_AREAS.map((focus) => (
                         <div
                             key={focus.name}
-                            className="group flex items-center justify-between px-4 py-3 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-hover)] transition-all duration-200 hover:translate-x-1 hover:border-[var(--color-primary)] hover:shadow-lg cursor-default"
+                            className="group flex items-center justify-between px-4 py-3 rounded-full border border-(--color-border) bg-(--color-surface-hover) transition-all duration-200 hover:translate-x-1 hover:border-(--color-primary) hover:shadow-lg cursor-default"
                         >
                             <div className="flex items-center gap-3">
-                                <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] transition-transform group-hover:scale-125" />
-                                <span className="text-sm text-[var(--color-text)] font-medium">
+                                <span className="w-2 h-2 rounded-full bg-(--color-primary) transition-transform group-hover:scale-125" />
+                                <span className="text-sm text-(--color-text) font-medium">
                   {focus.name}
                 </span>
                             </div>
-                            <span className="font-mono text-xs tracking-wider text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity uppercase">
+                            <span className="font-mono text-xs tracking-wider text-(--color-accent) opacity-0 group-hover:opacity-100 transition-opacity uppercase">
                 {focus.tag}
               </span>
                         </div>

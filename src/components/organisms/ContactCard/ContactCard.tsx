@@ -33,24 +33,24 @@ export const ContactCard: React.FC = () => {
         <>
             <Toast message="CV requested — Opening direct email draft..." isVisible={toastVisible} />
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-12 max-w-4xl mx-auto w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 rounded-lg border border-(--color-border) bg-(--color-surface) p-8 md:p-12 max-w-4xl mx-auto w-full">
                 {/* Left Column: Pitch & Actions */}
                 <div className="flex flex-col justify-between">
                     <div>
-                        <h3 className="font-serif text-3xl md:text-4xl text-[var(--color-text)] mb-4 leading-tight">
+                        <h3 className="font-serif text-3xl md:text-4xl text-(--color-text) mb-4 leading-tight">
                             Let's build something exceptional together.
                         </h3>
-                        <p className="text-sm text-[var(--color-text-muted)] mb-6 leading-relaxed">
+                        <p className="text-sm text-(--color-text-muted) mb-6 leading-relaxed">
                             Whether you're scaling a design system from scratch or optimizing component performance across engineering teams, let's talk.
                         </p>
 
                         {/* Availability Banner */}
-                        <div className="p-3.5 rounded-[var(--radius-md)] border border-[oklch(0.78_0.16_140/0.4)] bg-[var(--color-surface-hover)] flex items-center gap-3 mb-6">
+                        <div className="p-3.5 rounded-md border border-[oklch(0.78_0.16_140/0.4)] bg-(--color-surface-hover) flex items-center gap-3 mb-6">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[oklch(0.78_0.16_140)] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[oklch(0.78_0.16_140)]" />
               </span>
-                            <span className="font-mono text-xs font-semibold text-[var(--color-text)]">
+                            <span className="font-mono text-xs font-semibold text-(--color-text)">
                 Currently Open for Senior UI / Frontend Engineering Roles
               </span>
                         </div>
@@ -69,52 +69,52 @@ export const ContactCard: React.FC = () => {
                 </div>
 
                 {/* Right Column: Channels */}
-                <div className="space-y-4 pt-6 lg:pt-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-[var(--color-border)]">
-                    <h4 className="font-bold text-base text-[var(--color-text)] mb-3">Direct Channels</h4>
+                <div className="space-y-4 pt-6 lg:pt-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-(--color-border)">
+                    <h4 className="font-bold text-base text-(--color-text) mb-3">Direct Channels</h4>
 
                     {/* Email */}
-                    <div className="flex items-center gap-3 py-2 border-b border-[var(--color-border)]">
-                        <div className="w-10 h-10 rounded-full bg-[var(--color-surface-hover)] border border-[var(--color-border)] flex items-center justify-center text-[var(--color-primary)]">
+                    <div className="flex items-center gap-3 py-2 border-b border-(--color-border)">
+                        <div className="w-10 h-10 rounded-full bg-(--color-surface-hover) border border-(--color-border) flex items-center justify-center text-(--color-primary)">
                             <Mail size={16} />
                         </div>
                         <div>
-                            <div className="font-mono text-[0.7rem] uppercase text-[var(--color-text-dim)]">Direct Email</div>
-                            <a href="mailto:hello@anush.tech" className="text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)]">
+                            <div className="font-mono text-[0.7rem] uppercase text-(--color-text-dim)">Direct Email</div>
+                            <a href="mailto:hello@anush.tech" className="text-sm font-semibold text-(--color-text) hover:text-(--color-primary)">
                                 hello@anush.tech
                             </a>
                         </div>
                     </div>
 
                     {/* Response Window */}
-                    <div className="flex items-center gap-3 py-2 border-b border-[var(--color-border)]">
-                        <div className="w-10 h-10 rounded-full bg-[var(--color-surface-hover)] border border-[var(--color-border)] flex items-center justify-center text-[var(--color-primary)]">
+                    <div className="flex items-center gap-3 py-2 border-b border-(--color-border)">
+                        <div className="w-10 h-10 rounded-full bg-(--color-surface-hover) border border-(--color-border) flex items-center justify-center text-(--color-primary)">
                             <Clock size={16} />
                         </div>
                         <div>
-                            <div className="font-mono text-[0.7rem] uppercase text-[var(--color-text-dim)]">Response Window</div>
-                            <div className="text-sm font-semibold text-[var(--color-text)]">Under 24 Hours</div>
+                            <div className="font-mono text-[0.7rem] uppercase text-(--color-text-dim)">Response Window</div>
+                            <div className="text-sm font-semibold text-(--color-text)">Under 24 Hours</div>
                         </div>
                     </div>
 
                     {/* Locations */}
-                    <div className="flex items-start gap-3 py-2 border-b border-[var(--color-border)]">
-                        <div className="w-10 h-10 rounded-full bg-[var(--color-surface-hover)] border border-[var(--color-border)] flex items-center justify-center text-[var(--color-primary)] mt-1">
+                    <div className="flex items-start gap-3 py-2 border-b border-(--color-border)">
+                        <div className="w-10 h-10 rounded-full bg-(--color-surface-hover) border border-(--color-border) flex items-center justify-center text-(--color-primary) mt-1">
                             <MapPin size={16} />
                         </div>
                         <div className="flex-1">
-                            <div className="font-mono text-[0.7rem] uppercase text-[var(--color-text-dim)] mb-1">Location &amp; Work Mode</div>
-                            <div className="space-y-1 text-xs text-[var(--color-text)]">
+                            <div className="font-mono text-[0.7rem] uppercase text-(--color-text-dim) mb-1">Location &amp; Work Mode</div>
+                            <div className="space-y-1 text-xs text-(--color-text)">
                                 <div className="flex justify-between items-center">
                                     <span>Worldwide Remote</span>
-                                    <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-[var(--color-accent)]">Remote</span>
+                                    <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">Remote</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span>United Arab Emirates (UAE)</span>
-                                    <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-[var(--color-accent)]">Hybrid</span>
+                                    <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">Hybrid</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span>Yerevan, Armenia</span>
-                                    <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-[var(--color-accent)]">Onsite</span>
+                                    <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">Onsite</span>
                                 </div>
                             </div>
                         </div>
