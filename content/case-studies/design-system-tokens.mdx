@@ -1,0 +1,16 @@
+---
+title: "Multi-Brand Design Tokens with OKLCH & CSS Layers"
+subtitle: "How we unified enterprise platforms with sub-millisecond dynamic theme computations."
+date: "2026-02-20"
+role: "Lead UI Architect"
+tags: ["Design Systems", "OKLCH", "CSS Layers", "React 19"]
+---
+
+## Architecture Problem
+When scaling multiple frontend brands across iGaming, E-commerce, and Admin tooling, traditional hex or HSL variables encounter non-uniform lightness and gamut clipping.
+
+## Architectural Solution
+We transitioned token pipelines to **OKLCH (Oklab Color Space)**:
+
+- **Perceptual Uniformity**: Hue shifts do not degrade WCAG AA contrast.
+- **Zero-Runtime Overhead**: Native CSS cascade layers (`@layer tokens, primitives, components`).

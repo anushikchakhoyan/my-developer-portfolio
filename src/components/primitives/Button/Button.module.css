@@ -1,0 +1,78 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-full);
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.sm { padding: 0.45rem 1.1rem; font-size: 0.78rem; }
+.md { padding: 0.6rem 1.35rem; font-size: 0.84rem; }
+.lg { padding: 0.8rem 1.8rem; font-size: 0.94rem; }
+
+/* Themed Variant (Dark Mode = Deep Obsidian with subtle white border) */
+:global([data-theme="dark"]) .themed {
+    background: oklch(0.11 0.012 255);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+:global([data-theme="light"]) .themed {
+    background: #ffffff;
+    color: #0d1217;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+}
+
+/* Primary Variant */
+.primary {
+    background: var(--color-primary);
+    color: oklch(0.12 0.02 255);
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 4px 16px var(--color-primary-glow);
+}
+
+/* Outline Variant */
+.outline {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+/* 1px Gradient Border Mask Effect on Hover */
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, oklch(0.80 0.16 var(--brand-hue)), oklch(0.78 0.15 var(--accent-hue)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
+
+:global([data-theme="dark"]) .themed:hover {
+    background: oklch(0.09 0.01 255);
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px var(--color-primary-glow);
+}

@@ -1,0 +1,152 @@
+"use client";
+
+import React, { useState } from "react";
+import { ChevronDown, Rocket, Trees } from "lucide-react";
+import { CareerItem } from "@/lib/data";
+
+interface CareerAccordionProps {
+    items: CareerItem[];
+    defaultOpenId?: string;
+}
+
+export const CareerAccordion: React.FC<CareerAccordionProps> = ({
+                                                                    items,
+                                                                    defaultOpenId = "brainrocket",
+                                                                }) => {
+    const [openId, setOpenId] = useState<string | null>(defaultOpenId);
+
+    const toggle = (id: string) => {
+        setOpenId((curr) => (curr === id ? null : id));
+    };
+
+    return (
+        <div className="relative pl-14 flex flex-col gap-3.5 max-w-4xl mx-auto w-full">
+            {/* Continuous Axis Line */}
+            <div className="absolute left-[1.2rem] top-9 bottom-9 w-[2px] bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-accent)] to-[oklch(0.78_0.16_140)] -translate-x-1/2 z-0" />
+
+            {/* Top Node (Rocket) */}
+            <div
+                className="absolute left-[1.2rem] top-2 -translate-x-1/2 w-9 h-9 rounded-full bg-[var(--color-bg)] border-2 border-[var(--color-primary)] flex items-center justify-center text-[var(--color-primary)] shadow-[0_0_16px_var(--color-primary-glow)] z-10"
+                title="Present / Active"
+            >
+                <Rocket size={17} />
+            </div>
+
+            {/* Bottom Node (Tree) */}
+            <div
+                className="absolute left-[1.2rem] bottom-2 -translate-x-1/2 w-9 h-9 rounded-full bg-[var(--color-bg)] border-2 border-[oklch(0.78_0.16_140)] flex items-center justify-center text-[oklch(0.78_0.16_140)] shadow-[0_0_16px_rgba(0,0,0,0.3)] z-10"
+                title="Career Launch"
+            >
+                <Trees size={17} />
+            </div>
+
+            {/* Accordion Cards */}
+            {items.map((item) => {
+                const isOpen = openId === item.id;
+                return (
+                    <div
+                        key={item.id}
+                        className="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden transition-all duration-200 hover:border-[var(--color-border-accent)]"
+                    >
+                        <button
+                            onClick={() => toggle(item.id)}
+                            className="w-full text-left px-5 py-3.5 flex justify-between items-center cursor-pointer select-none"
+                            aria-expanded={isOpen}
+                        >
+                            <div>
+                <span className="font-mono text-xs tracking-wider text-[var(--color-accent)] uppercase font-semibold">
+                  {item.period}
+                </span>
+                                <h3 className="font-bold text-lg text-[var(--color-text)]">
+                                    {item.company}
+                                </h3>
+                                <span className="font-mono text-[0.7rem] text-[var(--color-text-dim)] uppercase">
+                  {item.location}
+                </span>
+                            </div>
+                            <ChevronDown
+                                size={18}
+                                className={`transition-transform duration-200 text-[var(--color-text-muted)] ${
+                                    isOpen ? "rotate-180 text-[var(--color-primary)]" : ""
+                                }`}
+                            />
+                        </button>
+
+                        {isOpen && (
+                            <div className="px-5 pb-5 pt-2 border-t border-[var(--color-border)]">
+                                {/* Standard Role */}
+                                {item.bullets.length > 0 && (
+                                    <>
+                                        <div className="text-sm font-semibold text-[var(--color-primary)] mb-2">
+                                            {item.role}
+                                        </div>
+                                        <ul className="space-y-1.5 mb-3 text-sm text-[var(--color-text-muted)]">
+                                            {item.bullets.map((b, idx) => (
+                                                <li
+                                                    key={idx}
+                                                    className="relative pl-4 before:content-['—'] before:absolute before:left-0 before:text-[var(--color-primary)]"
+                                                >
+                                                    {b}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {item.techStack.map((tech) => (
+                                                <span
+                                                    key={tech}
+                                                    className="font-mono text-xs px-2 py-0.5 rounded-[var(--radius-sm)] bg-[var(--color-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-muted)]"
+                                                >
+                          {tech}
+                        </span>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+
+                                {/* Subprojects (e.g. Freelance) */}
+                                {item.subprojects &&
+                                    item.subprojects.map((sub, sIdx) => (
+                                        <div
+                                            key={sIdx}
+                                            className={
+                                                sIdx < item.subprojects!.length - 1
+                                                    ? "pb-3 mb-3 border-b border-dashed border-[var(--color-border)]"
+                                                    : ""
+                                            }
+                                        >
+                                            <div className="text-sm font-semibold text-[var(--color-primary)]">
+                                                {sub.title}
+                                            </div>
+                                            <div className="font-mono text-xs text-[var(--color-text-dim)] mb-1">
+                                                {sub.period}
+                                            </div>
+                                            <ul className="space-y-1.5 mb-2 text-sm text-[var(--color-text-muted)]">
+                                                {sub.bullets.map((sb, sbIdx) => (
+                                                    <li
+                                                        key={sbIdx}
+                                                        className="relative pl-4 before:content-['—'] before:absolute before:left-0 before:text-[var(--color-primary)]"
+                                                    >
+                                                        {sb}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {sub.techStack.map((tech) => (
+                                                    <span
+                                                        key={tech}
+                                                        className="font-mono text-xs px-2 py-0.5 rounded-[var(--radius-sm)] bg-[var(--color-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-muted)]"
+                                                    >
+                            {tech}
+                          </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                            </div>
+                        )}
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
