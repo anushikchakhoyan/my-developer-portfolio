@@ -30,11 +30,9 @@ export const CAREER_DATA: CareerItem[] = [
         company: "BrainRocket",
         role: "Frontend UI Developer / Strong Middle UI Developer",
         period: "2025 — PRESENT",
-        location: "FULL-TIME · YEREVAN, ARMENIA",
+        location: "FULL-TIME · YEREVAN, HYBRID",
         bullets: [
-            "Managed global iGaming platform brand support, ensuring design system compliance across co-branded promotional assets.",
-            "Supported UFC brand partnership updates by modernizing game access points (thumbnails, play buttons, modals).",
-            "Refactored UI codebase to achieve 1:1 pixel fidelity with updated design specifications."
+            "Managed global iGaming platform brand support, ensuring strict design system compliance across co-branded promotional assets. Additionally, supported high-profile brand partnerships, such as UFC, by modernizing core game access points including thumbnails, play buttons, and interactive modals. Through extensive UI codebase refactoring, achieved 1:1 pixel fidelity with updated design specifications to deliver enhanced visual consistency and frontend performance.",
         ],
         techStack: ["Angular (v12+)", "TypeScript", "RxJS", "Custom Design Systems"]
     },
@@ -43,7 +41,7 @@ export const CAREER_DATA: CareerItem[] = [
         company: "Freelance",
         role: "Senior UI Developer",
         period: "2025 — 2026",
-        location: "FREELANCE · WORLDWIDE / REMOTE",
+        location: "FREELANCE · WORLDWIDE, REMOTE",
         bullets: [],
         techStack: [],
         subprojects: [
@@ -51,8 +49,7 @@ export const CAREER_DATA: CareerItem[] = [
                 title: "Green Development — Senior UI Developer",
                 period: "Aug 2025 – Jan 2026 · Construction Admin Panel",
                 bullets: [
-                    "Built core design system and reusable front-end component library for Construction Admin Panel from scratch.",
-                    "Standardized colors, spacing, typography, and component behavior for a unified look and faster development."
+                    "Built the core design system and reusable front-end component library from scratch for a Construction Admin Panel, standardizing colors, spacing, typography, and component behavior to deliver a unified look and accelerate development speed across the platform."
                 ],
                 techStack: ["Angular", "CSS", "PrimeNG"]
             },
@@ -60,8 +57,7 @@ export const CAREER_DATA: CareerItem[] = [
                 title: "Eiger Ltd — Senior UI Developer",
                 period: "Apr 2025 – Jul 2025 · Terrasoft iGaming",
                 bullets: [
-                    "Redesigned and built company website with modern responsive UI using Svelte and SvelteKit.",
-                    "Implemented engaging micro-interactions and optimized for performance, accessibility, and SEO."
+                    "Redesigned and built the company website with a modern responsive UI using Svelte and SvelteKit. Implemented engaging micro-interactions while optimizing the entire platform for high performance, web accessibility, and SEO."
                 ],
                 techStack: ["Svelte/SvelteKit", "Strapi", "CSS Animations"]
             }
@@ -74,9 +70,7 @@ export const CAREER_DATA: CareerItem[] = [
         period: "2023 — 2025",
         location: "FULL-TIME · YEREVAN, HYBRID",
         bullets: [
-            "Migrated legacy PHP-based UI components to modern, reusable React components.",
-            "Refactored and optimized frontend code; integrated backend APIs for real-time responsiveness.",
-            "Maintained shared component packages across food retail modules using Lerna monorepos."
+            "Migrated legacy PHP-based UI components to modern, reusable React components while refactoring and optimizing frontend code to integrate backend APIs for real-time responsiveness. Additionally, maintained shared component packages across food retail modules utilizing Lerna monorepos."
         ],
         techStack: ["React.js", "Ant Design", "Lerna", "Redux"]
     },
@@ -85,11 +79,9 @@ export const CAREER_DATA: CareerItem[] = [
         company: "InSpace Proximity",
         role: "UI Developer (Virtual Classroom Portal)",
         period: "2021 — 2023",
-        location: "FULL-TIME · HYBRID",
+        location: "FULL-TIME · YEREVAN, HYBRID",
         bullets: [
-            "Developed 30+ responsive frontend components using modern TypeScript frameworks.",
-            "Wrote unit test coverage using Jest to ensure reliability across classroom tools.",
-            "Documented component guidelines; performed PR code reviews focusing on accessibility and performance."
+            "Developed 30+ responsive frontend components using modern TypeScript frameworks and wrote comprehensive unit test coverage using Jest to ensure reliability across classroom tools. Additionally, documented component guidelines and performed thorough pull request code reviews with a strong focus on accessibility and performance."
         ],
         techStack: ["React.js", "TypeScript", "Tailwind CSS", "Jest", "MUI"]
     },
@@ -100,9 +92,7 @@ export const CAREER_DATA: CareerItem[] = [
         period: "2018 — 2021",
         location: "FULL-TIME · YEREVAN, ON-SITE",
         bullets: [
-            "Promoted from Intern to Junior to Middle Developer across 3 yrs 9 mos.",
-            "Built dynamic data tables with pagination, sorting, and live updates for SabX B2B/B2C marketplace.",
-            "Delivered 10+ responsive client websites with high SEO performance scores."
+            "Over a 3-year and 9-month journey, I successfully progressed from an Intern to Junior, and ultimately Middle Developer. I initially contributed to the SabX B2B/B2C marketplace by building dynamic data tables featuring pagination, sorting, and live updates. Later, as a Mid Developer, I led the development and delivery of 10+ responsive client websites, achieving high SEO performance scores and exceptional user experiences."
         ],
         techStack: ["React.js", "Next.js", "Redux", "Tailwind", "Vue.js"]
     }

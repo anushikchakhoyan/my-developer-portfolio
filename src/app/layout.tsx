@@ -12,7 +12,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" data-theme="dark">
+        <html lang="en" data-theme="dark" data-scroll-behavior="smooth" data-scribe-recorder-ready="true">
         <body className="antialiased selection:bg-(--color-primary) selection:text-black">
         {children}
         </body>

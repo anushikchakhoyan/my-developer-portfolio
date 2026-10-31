@@ -80,7 +80,7 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                                         <div className="text-sm font-semibold text-(--color-primary) mb-2">
                                             {item.role}
                                         </div>
-                                        <ul className="space-y-1.5 mb-3 text-sm text-(--color-text-muted)">
+                                        <ul className="space-y-1.5 mb-3 text-md text-(--color-text-muted)">
                                             {item.bullets.map((b, idx) => (
                                                 <li
                                                     key={idx}
