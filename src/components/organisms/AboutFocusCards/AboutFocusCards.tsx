@@ -35,9 +35,9 @@ export const AboutFocusCards: React.FC = () => {
                 <div className="flex flex-col items-start sm:items-center gap-4">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-border) bg-(--color-surface-hover) text-xs text-(--color-accent) font-mono">
                         <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
-                        Available Worldwide / Remote · Hybrid (Dubai)
+                        Available Worldwide / Remote 
                     </div>
-                    <Link href="#contact">
+                    <Link href="#slide-7">
                         <Button variant="primary" icon={<ArrowUpRight size={14} />}>
                             Hire Me
                         </Button>

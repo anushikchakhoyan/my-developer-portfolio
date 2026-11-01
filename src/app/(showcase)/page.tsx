@@ -26,14 +26,14 @@ export default function ShowcasePage() {
                 className="min-h-screen w-full flex flex-col justify-center items-center text-center px-6 pt-24 pb-16"
             >
                 <div className="max-w-3xl">
-          <span className="font-mono text-sm tracking-[3px] text-(--color-accent) font-semibold mb-4 block">
-            2018 → 2026 // PORTFOLIO
-          </span>
-                    <h1 className="text-6xl md:text-8xl font-serif text-(--color-text) mb-6 tracking-tight">
-                        Anush.tech
+                   <span className="font-mono text-sm tracking-[3px] text-(--color-accent) font-semibold mb-4 block">
+                       2018 → 2026 // PORTFOLIO
+                    </span>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-serif text-(--color-text) mb-6 tracking-tight">
+                        UI Architect & <br /> Frontend Engineer
                     </h1>
                     <p className="text-base md:text-xl text-(--color-text-muted) mb-8 leading-relaxed max-w-2xl mx-auto">
-                        Lead UI Architect &amp; Frontend Engineer specializing in scalable design systems, React component architecture, and high-performance web applications.
+                        Specializing in scalable design systems, React component architecture, and high-performance web applications.
                     </p>
                     <div className="flex gap-4 justify-center">
                         <Link href="#slide-7">

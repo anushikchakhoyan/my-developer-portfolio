@@ -26,7 +26,7 @@ export const ContactCard: React.FC = () => {
         setToastVisible(true);
         setTimeout(() => setToastVisible(false), 3500);
         window.location.href =
-            "mailto:hello@anush.tech?subject=Request%20for%20Anush%20Chakhoyan%20CV&body=Hi%20Anush,%0A%0APlease%20share%20your%20latest%20CV.";
+            "mailto:hello@anushui.dev?subject=Request%20for%20Anush%20Chakhoyan%20CV&body=Hi%20Anush,%0A%0APlease%20share%20your%20latest%20CV.";
     };
 
     return (
@@ -57,7 +57,7 @@ export const ContactCard: React.FC = () => {
                     </div>
 
                     <div className="flex flex-wrap gap-3">
-                        <a href="mailto:hello@anush.tech?subject=Engineering%20Inquiry%20for%20Anush">
+                        <a href="mailto:hello@anushui.dev?subject=Engineering%20Inquiry%20for%20Anush">
                             <Button variant="outline">Hire Me / Inquire ↗</Button>
                         </a>
                         <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
@@ -79,8 +79,8 @@ export const ContactCard: React.FC = () => {
                         </div>
                         <div>
                             <div className="font-mono text-[0.7rem] uppercase text-(--color-text-dim)">Direct Email</div>
-                            <a href="mailto:hello@anush.tech" className="text-sm font-semibold text-(--color-text) hover:text-(--color-primary)">
-                                hello@anush.tech
+                            <a href="mailto:hello@anushui.dev" className="text-sm font-semibold text-(--color-text) hover:text-(--color-primary)">
+                                hello@anushui.dev
                             </a>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ export const ContactCard: React.FC = () => {
                             <div className="font-mono text-[0.7rem] uppercase text-(--color-text-dim) mb-1">Location &amp; Work Mode</div>
                             <div className="space-y-1 text-xs text-(--color-text)">
                                 <div className="flex justify-between items-center">
-                                    <span>Worldwide Remote</span>
+                                    <span>Worldwide</span>
                                     <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">Remote</span>
                                 </div>
                                 <div className="flex justify-between items-center">
@@ -113,7 +113,7 @@ export const ContactCard: React.FC = () => {
                                     <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">Hybrid</span>
                                 </div>
                                 <div className="flex justify-between items-center">
-                                    <span>Yerevan, Armenia</span>
+                                    <span>Armenia</span>
                                     <span className="font-mono text-[0.68rem] px-1.5 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">Onsite</span>
                                 </div>
                             </div>
