@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 import { TestimonialItem } from "@/lib/data";
 
 interface TestimonialSliderProps {
@@ -20,8 +20,8 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonia
                     {current.role}
                 </div>
                 <span className="font-mono text-xs text-(--color-text-dim)">
-          0{index + 1} / 0{testimonials.length}
-        </span>
+                    0{index + 1} / 0{testimonials.length}
+                </span>
             </div>
 
             <div className="space-y-3.5 mb-8 text-(--color-text) font-light text-sm md:text-base leading-relaxed">
@@ -43,7 +43,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonia
                             className="font-bold text-sm md:text-base text-(--color-text) hover:text-(--color-primary) inline-flex items-center gap-1 transition-colors"
                         >
                             {current.author}
-                            <ArrowUpRight size={14} />
+                            <FiArrowUpRight size={14} />
                         </a>
                         <div className="text-xs text-(--color-text-muted) font-mono">
                             {current.title}
@@ -56,11 +56,10 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonia
                         <button
                             key={dotIdx}
                             onClick={() => setIndex(dotIdx)}
-                            className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                                dotIdx === index
-                                    ? "w-6 bg-(--color-primary)"
-                                    : "w-2.5 bg-(--color-border) hover:bg-(--color-text-muted)"
-                            }`}
+                            className={`h-2.5 rounded-full transition-all cursor-pointer ${dotIdx === index
+                                ? "w-6 bg-(--color-primary)"
+                                : "w-2.5 bg-(--color-border) hover:bg-(--color-text-muted)"
+                                }`}
                             aria-label={`Go to slide ${dotIdx + 1}`}
                         />
                     ))}

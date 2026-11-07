@@ -2,7 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Moon, Sun } from "lucide-react";
+import { AiFillSun } from "react-icons/ai";
+import { BsMoonStarsFill, BsLinkedin, BsGithub } from "react-icons/bs";
+
+import { ActionIconButton } from "../primitives/ActionIconButton/ActionIconButton";
 
 export const TopNav: React.FC = () => {
     const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -24,13 +27,26 @@ export const TopNav: React.FC = () => {
                 Anush Chakhoyan
             </Link>
 
-            <button
-                onClick={toggleTheme}
-                className="w-10 h-10 rounded-full border border-(--color-border) bg-(--color-surface) text-(--color-text) flex items-center justify-center transition-all hover:border-(--color-primary) hover:text-(--color-primary) hover:scale-105 cursor-pointer"
-                aria-label="Toggle theme"
-            >
-                {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
-            </button>
+            <div className="flex gap-2.5 pt-2">
+                <ActionIconButton
+                    icon={<BsLinkedin />}
+                    label="LinkedIn Profile"
+                    href="https://linkedin.com"
+                    target="_blank"
+                />
+                <ActionIconButton
+                    icon={<BsGithub />}
+                    label="GitHub Profile"
+                    href="https://github.com"
+                    target="_blank"
+                />
+                <ActionIconButton
+                    onClick={toggleTheme}
+                    icon={theme === "dark" ? <BsMoonStarsFill size={18} /> : <AiFillSun size={18} />}
+                    label="Toggle theme"
+                    target="_blank"
+                />
+            </div>
         </header>
     );
 };

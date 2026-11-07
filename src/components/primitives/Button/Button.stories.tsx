@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect, fn, userEvent, within } from "@storybook/test";
-import { ArrowUpRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
@@ -20,7 +20,7 @@ export const ThemedObsidian: Story = {
         children: "Hire Me / Inquire",
         variant: "themed",
         size: "md",
-        icon: <ArrowUpRight size={15} />
+        icon: <FiArrowUpRight size={15} />
     },
     play: async ({ canvasElement, args }) => {
         const canvas = within(canvasElement);
@@ -36,6 +36,6 @@ export const PrimaryRose: Story = {
         children: "Schedule a Call",
         variant: "primary",
         size: "md",
-        icon: <ArrowUpRight size={15} />
+        icon: <FiArrowUpRight size={15} />
     }
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "@/components/primitives/Button/Button";
 import { TopNav } from "@/components/layout/TopNav";
 import { SidebarNav } from "@/components/layout/SidebarNav";
@@ -37,7 +37,7 @@ export default function ShowcasePage() {
                     </p>
                     <div className="flex gap-4 justify-center">
                         <Link href="#slide-7">
-                            <Button variant="primary" icon={<ArrowUpRight size={16} />}>
+                            <Button variant="primary" icon={<FiArrowUpRight size={16} />}>
                                 Contact Me
                             </Button>
                         </Link>

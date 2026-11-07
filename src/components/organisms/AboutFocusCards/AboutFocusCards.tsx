@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "@/components/primitives/Button/Button";
 
 const FOCUS_AREAS = [
@@ -35,10 +35,10 @@ export const AboutFocusCards: React.FC = () => {
                 <div className="flex flex-col items-start sm:items-center gap-4">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-border) bg-(--color-surface-hover) text-xs text-(--color-accent) font-mono">
                         <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
-                        Available Worldwide / Remote 
+                        Available Worldwide / Remote
                     </div>
                     <Link href="#slide-7">
-                        <Button variant="primary" icon={<ArrowUpRight size={14} />}>
+                        <Button variant="primary" icon={<FiArrowUpRight size={14} />}>
                             Hire Me
                         </Button>
                     </Link>
@@ -50,8 +50,8 @@ export const AboutFocusCards: React.FC = () => {
                 <div className="flex justify-between items-center mb-6">
                     <h4 className="font-bold text-lg text-(--color-text)">Core Focus Areas</h4>
                     <span className="font-mono text-xs text-(--color-accent) tracking-wider">
-            HOVER TO INSPECT
-          </span>
+                        HOVER TO INSPECT
+                    </span>
                 </div>
 
                 <div className="flex flex-col gap-3">
@@ -63,12 +63,12 @@ export const AboutFocusCards: React.FC = () => {
                             <div className="flex items-center gap-3">
                                 <span className="w-2 h-2 rounded-full bg-(--color-primary) transition-transform group-hover:scale-125" />
                                 <span className="text-sm text-(--color-text) font-medium">
-                  {focus.name}
-                </span>
+                                    {focus.name}
+                                </span>
                             </div>
                             <span className="font-mono text-xs tracking-wider text-(--color-accent) opacity-0 group-hover:opacity-100 transition-opacity uppercase">
-                {focus.tag}
-              </span>
+                                {focus.tag}
+                            </span>
                         </div>
                     ))}
                 </div>

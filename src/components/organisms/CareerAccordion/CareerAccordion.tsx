@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, Rocket, Trees } from "lucide-react";
+import { FaAngleDown } from "react-icons/fa6";
+
 import { CareerItem } from "@/lib/data";
 
 interface CareerAccordionProps {
@@ -10,9 +11,9 @@ interface CareerAccordionProps {
 }
 
 export const CareerAccordion: React.FC<CareerAccordionProps> = ({
-                                                                    items,
-                                                                    defaultOpenId = "brainrocket",
-                                                                }) => {
+    items,
+    defaultOpenId = "brainrocket",
+}) => {
     const [openId, setOpenId] = useState<string | null>(defaultOpenId);
 
     const toggle = (id: string) => {
@@ -29,7 +30,7 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                 className="absolute left-[1.2rem] top-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-(--color-primary) flex items-center justify-center text-(--color-primary) shadow-[0_0_16px_var(--color-primary-glow)] z-10"
                 title="Present / Active"
             >
-                <Rocket size={17} />
+                {/* <Rocket size={17} /> */}
             </div>
 
             {/* Bottom Node (Tree) */}
@@ -37,7 +38,7 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                 className="absolute left-[1.2rem] bottom-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-[oklch(0.78_0.16_140)] flex items-center justify-center text-[oklch(0.78_0.16_140)] shadow-[0_0_16px_rgba(0,0,0,0.3)] z-10"
                 title="Career Launch"
             >
-                <Trees size={17} />
+                {/* <Trees size={17} /> */}
             </div>
 
             {/* Accordion Cards */}
@@ -54,21 +55,20 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                             aria-expanded={isOpen}
                         >
                             <div>
-                <span className="font-mono text-xs tracking-wider text-(--color-accent) uppercase font-semibold">
-                  {item.period}
-                </span>
+                                <span className="font-mono text-xs tracking-wider text-(--color-accent) uppercase font-semibold">
+                                    {item.period}
+                                </span>
                                 <h3 className="font-bold text-lg text-(--color-text)">
                                     {item.company}
                                 </h3>
                                 <span className="font-mono text-[0.7rem] text-(--color-text-dim) uppercase">
-                  {item.location}
-                </span>
+                                    {item.location}
+                                </span>
                             </div>
-                            <ChevronDown
+                            <FaAngleDown
                                 size={18}
-                                className={`transition-transform duration-200 text-(--color-text-muted) ${
-                                    isOpen ? "rotate-180 text-(--color-primary)" : ""
-                                }`}
+                                className={`transition-transform duration-200 text-(--color-text-muted) ${isOpen ? "rotate-180 text-(--color-primary)" : ""
+                                    }`}
                             />
                         </button>
 
@@ -96,8 +96,8 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                                                     key={tech}
                                                     className="font-mono text-xs px-2 py-0.5 rounded-sm bg-(--color-surface-hover) border border-(--color-border) text-(--color-text-muted)"
                                                 >
-                          {tech}
-                        </span>
+                                                    {tech}
+                                                </span>
                                             ))}
                                         </div>
                                     </>
@@ -136,8 +136,8 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                                                         key={tech}
                                                         className="font-mono text-xs px-2 py-0.5 rounded-sm bg-(--color-surface-hover) border border-(--color-border) text-(--color-text-muted)"
                                                     >
-                            {tech}
-                          </span>
+                                                        {tech}
+                                                    </span>
                                                 ))}
                                             </div>
                                         </div>
