@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleDown, FaLeaf } from "react-icons/fa6";
+import { IoIosRocket } from "react-icons/io";
 
 import { CareerItem } from "@/lib/data";
 
@@ -22,26 +23,19 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
 
     return (
         <div className="relative pl-14 flex flex-col gap-3.5 max-w-4xl mx-auto w-full">
-            {/* Continuous Axis Line */}
             <div className="absolute left-[1.2rem] top-9 bottom-9 w-0.5 bg-linear-to-b from-(--color-primary) via-(--color-accent) to-[oklch(0.78_0.16_140)] -translate-x-1/2 z-0" />
-
-            {/* Top Node (Rocket) */}
             <div
                 className="absolute left-[1.2rem] top-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-(--color-primary) flex items-center justify-center text-(--color-primary) shadow-[0_0_16px_var(--color-primary-glow)] z-10"
                 title="Present / Active"
             >
-                {/* <Rocket size={17} /> */}
+                <IoIosRocket size={17} />
             </div>
-
-            {/* Bottom Node (Tree) */}
             <div
                 className="absolute left-[1.2rem] bottom-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-[oklch(0.78_0.16_140)] flex items-center justify-center text-[oklch(0.78_0.16_140)] shadow-[0_0_16px_rgba(0,0,0,0.3)] z-10"
                 title="Career Launch"
             >
-                {/* <Trees size={17} /> */}
+                <FaLeaf size={17} />
             </div>
-
-            {/* Accordion Cards */}
             {items.map((item) => {
                 const isOpen = openId === item.id;
                 return (

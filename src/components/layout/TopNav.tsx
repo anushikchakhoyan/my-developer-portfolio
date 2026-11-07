@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { AiFillSun } from "react-icons/ai";
-import { BsMoonStarsFill, BsLinkedin, BsGithub } from "react-icons/bs";
 
-import { ActionIconButton } from "../primitives/ActionIconButton/ActionIconButton";
+import { BsMoonStarsFill, BsGithub } from "react-icons/bs";
+import { FaLinkedinIn } from "react-icons/fa";
+import { AiFillSun } from "react-icons/ai";
+
+import { Button } from "../primitives/Button/Button";
 
 export const TopNav: React.FC = () => {
     const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -28,24 +30,14 @@ export const TopNav: React.FC = () => {
             </Link>
 
             <div className="flex gap-2.5 pt-2">
-                <ActionIconButton
-                    icon={<BsLinkedin />}
-                    label="LinkedIn Profile"
-                    href="https://linkedin.com"
-                    target="_blank"
-                />
-                <ActionIconButton
-                    icon={<BsGithub />}
-                    label="GitHub Profile"
-                    href="https://github.com"
-                    target="_blank"
-                />
-                <ActionIconButton
+                <Button iconOnly filled href="https://linkedin.com" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
+                <Button iconOnly filled href="https://github.com" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
+                <Button
+                    iconOnly
+                    filled
                     onClick={toggleTheme}
-                    icon={theme === "dark" ? <BsMoonStarsFill size={18} /> : <AiFillSun size={18} />}
-                    label="Toggle theme"
-                    target="_blank"
-                />
+                    aria-label="Toggle theme"
+                    icon={theme === "dark" ? <BsMoonStarsFill size={18} /> : <AiFillSun size={18} />} />
             </div>
         </header>
     );

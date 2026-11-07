@@ -3,7 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+
 import { Button } from "@/components/primitives/Button/Button";
+import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
 
 const FOCUS_AREAS = [
     { name: "React Component Architecture", tag: "Lead" },
@@ -33,10 +35,7 @@ export const AboutFocusCards: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col items-start sm:items-center gap-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-border) bg-(--color-surface-hover) text-xs text-(--color-accent) font-mono">
-                        <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
-                        Available Worldwide / Remote
-                    </div>
+                    <AvailabilityBadge>Available Worldwide / Remote</AvailabilityBadge>
                     <Link href="#slide-7">
                         <Button variant="primary" icon={<FiArrowUpRight size={14} />}>
                             Hire Me
