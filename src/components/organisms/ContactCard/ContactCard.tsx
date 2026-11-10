@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import { BsGithub, BsCalendar2DateFill } from "react-icons/bs";
-import { FiDownload, FiMapPin } from "react-icons/fi";
+import { FiArrowUpRight, FiDownload, FiMapPin } from "react-icons/fi";
 import { IoMdMailUnread } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
@@ -34,7 +34,7 @@ export const ContactCard: React.FC = () => {
                             Let's build something exceptional together.
                         </h3>
                         <p className="text-sm text-(--color-text-muted) mb-6 leading-relaxed">
-                            Whether you're scaling a design system from scratch or optimizing component performance across engineering teams, let's talk.
+                            Whether it's a role, a side project, or just a question about frontend work, I'm always happy to connect and talk.
                         </p>
 
                         <AvailabilityBadge className="mb-0">Currently Open for Senior UI / Frontend Engineering Roles</AvailabilityBadge>
@@ -42,11 +42,11 @@ export const ContactCard: React.FC = () => {
 
                     <div className="flex flex-wrap gap-3">
                         <a href="mailto:hello@anushui.dev?subject=Engineering%20Inquiry%20for%20Anush">
-                            <Button variant="outline">Hire Me / Inquire ↗</Button>
+                            <Button variant="outline" icon={<FiArrowUpRight size={16} />}>Hire Me / Inquire</Button>
                         </a>
                         <a href="https://calendly.com/anush-chakhoyan-dev" target="_blank" rel="noopener noreferrer">
                             <Button variant="primary" icon={<BsCalendar2DateFill size={14} />}>
-                                Schedule a Call ↗
+                                Schedule a Call
                             </Button>
                         </a>
                     </div>

@@ -32,8 +32,9 @@ export default function ShowcasePage() {
                     <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-(--color-text) mb-6 tracking-tight">
                         I'm a UI Architect & <br /> Frontend Engineer
                     </h1>
-                    <p className="text-base md:text-xl text-(--color-text-muted) mb-8 leading-relaxed max-w-2xl mx-auto">
-                        Specializing in scalable design systems, React component architecture, and high-performance web applications.
+                    <p className="text-base md:text-lg text-(--color-text-muted) mb-8 leading-relaxed max-w-3xl mx-auto">
+                        with 7+ years of experience. My focus is turning fast-moving product requirements into clean, maintainable component architecture —
+                        with design-system consistency, accessibility, and testing built in from the start. 
                     </p>
                     <div className="flex gap-4 justify-center">
                         <Link href="#slide-7">

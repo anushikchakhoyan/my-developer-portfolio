@@ -21,21 +21,29 @@ export const AboutFocusCards: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8">
             {/* Left Column: Bio Card */}
             <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-8">
-                <h3 className="font-serif text-3xl text-(--color-primary) mb-3">
-                    hey there, stranger.
+                <h3 className="font-serif text-3xl text-(--color-primary) mb-1">
+                    Hey there, stranger.
                 </h3>
-                <p className="text-(--color-text-muted) mb-4 text-sm">
-                    this is my personal space, and welcome.
+                <p className="text-(--color-text-muted) mb-8 text-md leading-relaxed">
+                    welcome to my corner of the web.
                 </p>
                 <p className="text-sm leading-relaxed mb-4 text-(--color-text)">
-                    Frontend Engineer with 7+ years building responsive, production UIs — in React, with hands-on TypeScript and AI-assisted workflows — for platforms spanning iGaming, E-commerce, Admin tooling, and Edtech.
+                    I'm Anush, a UI Architect and Frontend Engineer with 7+ years turning messy product 
+                    requirements into interfaces people actually enjoy using.
+                    Most of that time has been spent deep in React and TypeScript,
+                    building production UIs for iGaming, E-commerce, Admin tooling, and Edtech platforms.
                 </p>
-                <p className="text-sm leading-relaxed mb-8 text-(--color-text)">
-                    The core specialty is turning fast-moving product requirements into clean, maintainable component architecture — from Figma handoff and design-system consistency to accessibility and testing.
+                <p className="text-sm leading-relaxed mb-4 text-(--color-text)">
+                    I'm fluent in the tools that make good UI work: Next.js for the app layer, 
+                    Tailwind for styling, Storybook for component docs, Figma for handoff, 
+                    plus a real focus on accessibility, testing, and design-system consistency. 
+                    Lately I've been leaning into AI-assisted workflows to move faster without cutting corners.
+                </p>
+                <p className="text-sm leading-relaxed mb-10 text-(--color-text)">
+                    When I'm not shipping components, I'm usually refining my own tooling or exploring whatever's new in the frontend world.
                 </p>
 
                 <div className="flex flex-col items-start sm:items-center gap-4">
-                    <AvailabilityBadge>Available Worldwide / Remote</AvailabilityBadge>
                     <Link href="#slide-7">
                         <Button variant="primary" icon={<FiArrowUpRight size={14} />}>
                             Hire Me
