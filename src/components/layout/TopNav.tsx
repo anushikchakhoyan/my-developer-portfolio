@@ -30,8 +30,8 @@ export const TopNav: React.FC = () => {
             </Link>
 
             <div className="flex gap-2.5">
-                <Button iconOnly filled href="https://linkedin.com" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
-                <Button iconOnly filled href="https://github.com" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
+                <Button iconOnly filled href="https://linkedin.com/in/anush-chakhoyan" target="_blank" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
+                <Button iconOnly filled href="https://github.com/anushikchakhoyan" target="_blank" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
                 <Button
                     iconOnly
                     filled

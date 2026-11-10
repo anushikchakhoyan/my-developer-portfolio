@@ -111,8 +111,8 @@ export const ContactCard: React.FC = () => {
                             aria-label="Download CV"
                             onClick={handleDownloadCv}
                         />
-                        <Button iconOnly filled href="https://linkedin.com" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
-                        <Button iconOnly filled href="https://github.com" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
+                        <Button iconOnly filled href="https://linkedin.com/in/anush-chakhoyan" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
+                        <Button iconOnly filled href="https://github.com/anushikchakhoyan" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
                     </div>
                 </div>
             </div>
