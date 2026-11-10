@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import { Button } from "@/components/primitives/Button/Button";
-import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
 
 const FOCUS_AREAS = [
     { name: "React Component Architecture", tag: "Lead" },

@@ -33,7 +33,7 @@ export default function ShowcasePage() {
                         I'm a UI Architect & <br /> Frontend Engineer
                     </h1>
                     <p className="text-base md:text-lg text-(--color-text-muted) mb-8 leading-relaxed max-w-3xl mx-auto">
-                        with 7+ years of experience. My focus is turning fast-moving product requirements into clean, maintainable component architecture —
+                        My focus is turning fast-moving product requirements into clean, maintainable component architecture —
                         with design-system consistency, accessibility, and testing built in from the start. 
                     </p>
                     <div className="flex gap-4 justify-center">
@@ -58,7 +58,7 @@ export default function ShowcasePage() {
                             About Me
                         </h2>
                         <p className="text-sm text-(--color-text-muted) mt-1">
-                            UI Architect &amp; Design Systems Lead focused on scalable frontend infrastructure.
+                            A little about me and what I do.
                         </p>
                     </header>
                     <AboutFocusCards />
