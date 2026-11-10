@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import { Button } from "@/components/primitives/Button/Button";
-import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
+import { Button } from "@/components/atoms/Button/Button";
+import { AvailabilityBadge } from "@/components/atoms/AvailabilityBadge/AvailabilityBadge";
 
 const FOCUS_AREAS = [
     { name: "React Component Architecture", tag: "Lead" },
@@ -21,23 +21,23 @@ export const AboutFocusCards: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8">
             {/* Left Column: Bio Card */}
             <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-8">
-                <h3 className="font-serif text-3xl text-(--color-primary) mb-3">
+                <h3 className="font-serif text-4xl text-(--color-primary) mb-3">
                     hey there, stranger.
                 </h3>
                 <p className="text-(--color-text-muted) mb-4 text-sm">
-                    this is my personal space, and welcome.
+                    This is my personal space, and you're welcome here.
                 </p>
-                <p className="text-sm leading-relaxed mb-4 text-(--color-text)">
-                    Frontend Engineer with 7+ years building responsive, production UIs — in React, with hands-on TypeScript and AI-assisted workflows — for platforms spanning iGaming, E-commerce, Admin tooling, and Edtech.
+                <p className="text-md leading-relaxed mb-4 text-(--color-text)">
+                    I'm a Frontend Engineer with 7+ years building responsive, production UIs — React at the core, with hands-on TypeScript and AI-assisted workflows — for platforms spanning iGaming, E-commerce, Admin tooling, and Edtech.
                 </p>
-                <p className="text-sm leading-relaxed mb-8 text-(--color-text)">
-                    The core specialty is turning fast-moving product requirements into clean, maintainable component architecture — from Figma handoff and design-system consistency to accessibility and testing.
+                <p className="text-m dleading-relaxed mb-8 text-(--color-text)">
+                    What I do best is turn fast-moving product requirements into clean, maintainable component architecture — from Figma handoff and design-system consistency through to accessibility and testing.
                 </p>
 
-                <div className="flex flex-col items-start sm:items-center gap-4">
-                    <AvailabilityBadge>Available Worldwide / Remote</AvailabilityBadge>
+                <div className="flex flex-col items-start gap-4">
+                    <AvailabilityBadge size="h-1.5 w-1.5">Available Worldwide / Remote</AvailabilityBadge>
                     <Link href="#slide-7">
-                        <Button variant="primary" icon={<FiArrowUpRight size={14} />}>
+                        <Button variant="primary" rightIcon={<FiArrowUpRight size={14} />}>
                             Hire Me
                         </Button>
                     </Link>

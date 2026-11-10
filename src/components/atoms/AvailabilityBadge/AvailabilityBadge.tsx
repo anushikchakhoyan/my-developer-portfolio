@@ -27,7 +27,7 @@ export function AvailabilityBadge({
     return (
         <div
             className={clsx(
-                "p-3.5 rounded-md border bg-gray-100/25 flex items-center gap-3 mb-2",
+                "p-3.5 rounded-md border bg-(--color-surface) flex items-center gap-3 mb-2",
                 border,
                 className
             )}

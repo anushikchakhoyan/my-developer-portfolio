@@ -5,6 +5,7 @@ import { FaAngleDown, FaLeaf } from "react-icons/fa6";
 import { IoIosRocket } from "react-icons/io";
 
 import { CareerItem } from "@/lib/data";
+import { Button } from "@/components/atoms/Button/Button";
 
 interface CareerAccordionProps {
     items: CareerItem[];

@@ -7,7 +7,7 @@ import { BsMoonStarsFill, BsGithub } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillSun } from "react-icons/ai";
 
-import { Button } from "../primitives/Button/Button";
+import { Button } from "../atoms/Button/Button";
 
 export const TopNav: React.FC = () => {
     const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -30,14 +30,13 @@ export const TopNav: React.FC = () => {
             </Link>
 
             <div className="flex gap-2.5">
-                <Button iconOnly filled href="https://linkedin.com" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
-                <Button iconOnly filled href="https://github.com" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
+                <Button variant="outline" href="https://linkedin.com" aria-label="LinkedIn Profile" rightIcon={<FaLinkedinIn size={18} />} />
+                <Button variant="outline" href="https://github.com" aria-label="GitHub Profile" rightIcon={<BsGithub size={18} />} />
                 <Button
-                    iconOnly
-                    filled
+                    variant="outline"
                     onClick={toggleTheme}
                     aria-label="Toggle theme"
-                    icon={theme === "dark" ? <BsMoonStarsFill size={18} /> : <AiFillSun size={18} />} />
+                    rightIcon={theme === "dark" ? <BsMoonStarsFill size={18} /> : <AiFillSun size={18} />} />
             </div>
         </header>
     );

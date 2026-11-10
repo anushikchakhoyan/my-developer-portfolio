@@ -1,0 +1,224 @@
+/* ==========================================================
+   Pill button + Icon button
+   Required global tokens: --radius-full, --color-primary,
+   --color-primary-glow, --color-accent, --color-text,
+   --color-surface, --color-border, --brand-hue, --accent-hue
+   ========================================================== */
+
+/* ---------- Shared base ---------- */
+.btn,
+.iconBtn {
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Gradient ring (1px border mask), shared by both buttons */
+.btn::after,
+.iconBtn::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--ring-gradient);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn {
+    --ring-gradient: linear-gradient(135deg,
+            oklch(0.8 0.16 var(--brand-hue)),
+            oklch(0.78 0.15 var(--accent-hue)));
+}
+
+.iconBtn {
+    --ring-gradient: linear-gradient(to bottom right,
+            var(--color-primary),
+            var(--color-accent));
+}
+
+/* Keyboard focus (replaces the old `outline: none`) */
+.btn:focus-visible,
+.iconBtn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.btn:focus-visible::after,
+.iconBtn:focus-visible::after {
+    opacity: 1;
+}
+
+.btn:disabled,
+.iconBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ---------- Pill / text button ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.sm {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.78rem;
+}
+
+.md {
+    padding: 0.6rem 1.35rem;
+    font-size: 0.84rem;
+}
+
+.lg {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.94rem;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Primary */
+.primary {
+    background: var(--color-primary);
+    color: var(--color-text);
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 4px 16px var(--color-primary-glow);
+}
+
+/* Secondary: quieter filled button, tinted with the accent color */
+.secondary {
+    --s-bg: color-mix(in srgb, var(--color-accent) 14%, var(--color-surface));
+    --s-bg-hover: color-mix(in srgb, var(--color-accent) 24%, var(--color-surface));
+    --s-border: color-mix(in srgb, var(--color-accent) 40%, transparent);
+
+    background: var(--s-bg);
+    color: var(--color-text);
+    border: 1px solid var(--s-border);
+}
+
+/* Outline */
+.outline {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+/* Themed: values are set per theme, declarations are written once */
+.themed {
+    --t-bg: #ffffff;
+    --t-bg-hover: #ffffff;
+    --t-fg: #0d1217;
+    --t-border: rgba(0, 0, 0, 0.15);
+    --t-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    --t-shadow-hover: 0 8px 22px rgba(0, 0, 0, 0.16);
+
+    background: var(--t-bg);
+    color: var(--t-fg);
+    border: 1px solid var(--t-border);
+    box-shadow: var(--t-shadow);
+}
+
+:global([data-theme="dark"]) .themed {
+    --t-bg: oklch(0.11 0.012 255);
+    --t-bg-hover: oklch(0.09 0.01 255);
+    --t-fg: #ffffff;
+    --t-border: rgba(255, 255, 255, 0.22);
+    --t-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    --t-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px var(--color-primary-glow);
+}
+
+/* ---------- Icon button (40x40) ---------- */
+.iconBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.iconBtn svg {
+    stroke: currentColor;
+}
+
+/* "filled": the gradient fills the whole circle instead of a ring */
+.filled::after {
+    padding: 0;
+    -webkit-mask: none;
+    mask: none;
+}
+
+/* ---------- Hover (only on devices that really hover) ---------- */
+@media (hover: hover) and (pointer: fine) {
+
+    .btn:hover:not(:disabled)::after,
+    .iconBtn:hover:not(:disabled)::after {
+        opacity: 1;
+    }
+
+    .iconBtn.filled:hover:not(:disabled)::after {
+        opacity: 0.16;
+    }
+
+    .secondary:hover:not(:disabled) {
+        background: var(--s-bg-hover);
+    }
+
+    .themed:hover:not(:disabled) {
+        background: var(--t-bg-hover);
+        border-color: transparent;
+        box-shadow: var(--t-shadow-hover);
+    }
+
+    .iconBtn:hover:not(:disabled) {
+        color: var(--color-primary);
+        border-color: transparent;
+    }
+}
+
+/* Lift effect only if motion is allowed */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+
+    .btn:hover:not(:disabled),
+    .iconBtn:hover:not(:disabled) {
+        transform: translateY(-2px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .btn,
+    .iconBtn,
+    .btn::after,
+    .iconBtn::after {
+        transition: none;
+    }
+}

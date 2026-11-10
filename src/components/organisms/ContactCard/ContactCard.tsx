@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 
 import { BsGithub, BsCalendar2DateFill } from "react-icons/bs";
-import { FiDownload, FiMapPin } from "react-icons/fi";
+import { FiDownload, FiMapPin, FiArrowUpRight } from "react-icons/fi";
 import { IoMdMailUnread } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 
-import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
-import { Button } from "@/components/primitives/Button/Button";
-import { Toast } from "@/components/primitives/Toast/Toast";
+import { AvailabilityBadge } from "@/components/atoms/AvailabilityBadge/AvailabilityBadge";
+import { Button } from "@/components/atoms/Button/Button";
+import { Toast } from "@/components/atoms/Toast/Toast";
 
 export const ContactCard: React.FC = () => {
     const [toastVisible, setToastVisible] = useState(false);
@@ -42,11 +42,11 @@ export const ContactCard: React.FC = () => {
 
                     <div className="flex flex-wrap gap-3">
                         <a href="mailto:hello@anushui.dev?subject=Engineering%20Inquiry%20for%20Anush">
-                            <Button variant="outline">Hire Me / Inquire ↗</Button>
+                            <Button variant="outline" rightIcon={<FiArrowUpRight size={14} />}>Hire Me / Inquire</Button>
                         </a>
                         <a href="https://calendly.com/anush-chakhoyan-dev" target="_blank" rel="noopener noreferrer">
-                            <Button variant="primary" icon={<BsCalendar2DateFill size={14} />}>
-                                Schedule a Call ↗
+                            <Button variant="primary" rightIcon={<BsCalendar2DateFill size={14} />}>
+                                Schedule a Call
                             </Button>
                         </a>
                     </div>
@@ -106,13 +106,14 @@ export const ContactCard: React.FC = () => {
 
                     {/* Action Icons: Download CV, LinkedIn, GitHub */}
                     <div className="flex gap-2.5 pt-2">
-                        <Button iconOnly filled
-                            icon={<FiDownload size={15} />}
+                        <Button
+                            variant="outline"
+                            rightIcon={<FiDownload size={15} />}
                             aria-label="Download CV"
                             onClick={handleDownloadCv}
                         />
-                        <Button iconOnly filled href="https://linkedin.com" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
-                        <Button iconOnly filled href="https://github.com" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
+                        <Button variant="outline" href="https://linkedin.com" aria-label="LinkedIn Profile" rightIcon={<FaLinkedinIn size={18} />} />
+                        <Button variant="outline" href="https://github.com" aria-label="GitHub Profile" rightIcon={<BsGithub size={18} />} />
                     </div>
                 </div>
             </div>
