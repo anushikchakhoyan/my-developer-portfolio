@@ -8,13 +8,13 @@ export const Footer: React.FC = () => {
                 &copy; 2026 Anush Chakhoyan. Built with Love.
             </div>
             <div className="flex gap-6">
-                <Link href="#slide-3" className="hover:text-(--color-primary) transition-colors">
-                    Experience
+                <Link href="#career" className="hover:text-(--color-primary) transition-colors">
+                    Career
                 </Link>
-                <Link href="#slide-4" className="hover:text-(--color-primary) transition-colors">
+                <Link href="#testimonials" className="hover:text-(--color-primary) transition-colors">
                     Testimonials
                 </Link>
-                <Link href="#slide-7" className="hover:text-(--color-primary) transition-colors">
+                <Link href="#contact" className="hover:text-(--color-primary) transition-colors">
                     Contact
                 </Link>
             </div>

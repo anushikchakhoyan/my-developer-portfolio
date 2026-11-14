@@ -1,48 +1,23 @@
 import React from "react";
 
-const PIPELINE_STEPS = [
-    {
-        step: "01 // TOKENS",
-        title: "Figma Sync",
-        desc: "Automated token extraction from Figma variables into JSON transform pipelines.",
-        color: "var(--color-primary)"
-    },
-    {
-        step: "02 // COMPONENTS",
-        title: "React & Svelte",
-        desc: "Accessible, headless UI primitive components built with strict TypeScript.",
-        color: "var(--color-accent)"
-    },
-    {
-        step: "03 // TESTING",
-        title: "a11y & Jest",
-        desc: "Automated WCAG 2.2 AA audit checks & Jest unit testing coverage.",
-        color: "var(--color-primary)"
-    },
-    {
-        step: "04 // DELIVERY",
-        title: "Monorepo Sync",
-        desc: "Lerna / NPM packages distributed across enterprise product teams.",
-        color: "var(--color-accent)"
-    }
-];
+import {  SKILL_GROUPS } from "@/lib/data";
 
 export const ArchitectureGrid: React.FC = () => {
+ 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto w-full">
-            {PIPELINE_STEPS.map((item) => (
-                <div
-                    key={item.step}
-                    className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6 hover:border-(--color-border-accent) transition-all hover:-translate-y-1"
-                >
-          <span
-              className="font-mono text-xs tracking-wider block mb-2 font-semibold"
-              style={{ color: item.color }}
-          >
-            {item.step}
-          </span>
-                    <h4 className="font-bold text-lg text-(--color-text) mb-2">{item.title}</h4>
-                    <p className="text-xs text-(--color-text-muted) leading-relaxed">{item.desc}</p>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SKILL_GROUPS?.map((group) => (
+              <div
+                key={group.step}
+                className="gradient-border-hover rounded-lg border border-(--color-border) bg-(--color-surface) p-6"
+               >
+                  <span
+                     className="mb-2 block font-mono text-xs font-semibold tracking-wider"
+                     style={{ color: group.color }}>
+                        {group.step}
+                    </span>
+                    <h4 className="mb-2 text-lg font-bold text-(--color-text)">{group.title}</h4>
+                    <p className="text-xs leading-relaxed text-(--color-text-muted)">{group.desc}</p>
                 </div>
             ))}
         </div>

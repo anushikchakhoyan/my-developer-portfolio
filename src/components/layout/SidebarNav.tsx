@@ -3,17 +3,17 @@
 import React, { useEffect, useState } from "react";
 
 const SLIDES = [
-    { id: "slide-1", title: "Home" },
-    { id: "slide-2", title: "About me" },
-    { id: "slide-3", title: "Experience" },
-    { id: "slide-4", title: "Testimonials" },
-    { id: "slide-5", title: "Live Demo" },
-    // { id: "slide-6", title: "Blog" },
-    { id: "slide-7", title: "Contact" },
+    { id: "intro", title: "Intro" },
+    { id: "about-me", title: "About me" },
+    { id: "career", title: "Career Timeline" },
+    { id: "testimonials", title: "Testimonials" },
+    { id: "live-demo", title: "Live Demo" },
+    { id: "skills", title: "Skills" },
+    { id: "contact", title: "Contact" },
 ];
 
 export const SidebarNav: React.FC = () => {
-    const [activeId, setActiveId] = useState("slide-1");
+    const [activeId, setActiveId] = useState("intro");
 
     useEffect(() => {
         const observer = new IntersectionObserver(

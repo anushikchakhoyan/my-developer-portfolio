@@ -24,6 +24,15 @@ export interface TestimonialItem {
     avatar: string;
 }
 
+export interface SkillGroup {
+    step: string;
+    title: string;
+    desc: string;
+    skills: string[];
+    color: string;
+};
+
+
 export const CAREER_DATA: CareerItem[] = [
     {
         id: "brainrocket",
@@ -127,4 +136,49 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
             "Based on my experience with Anush, I am confident that she would be an excellent addition to your company. I strongly recommend her for Front-End developer and believe she has the ability, motivation, and character to succeed."
         ]
     }
+];
+
+export const SKILL_GROUPS: SkillGroup[] = [
+    {
+        step: "// FRONTEND",
+        title: "React & Next.js",
+        desc: "Production UIs built with strict TypeScript across React, Next.js and Svelte.",
+        skills: ["React", "Next.js", "Gatsby.js", "Svelte", "SvelteKit", "TypeScript", "JavaScript ES6+", "HTML5 & CSS3"],
+        color: "var(--color-primary)",
+    },
+    {
+        step: "// STYLING",
+        title: "Design Systems",
+        desc: "Tokens, themes and reusable component libraries documented in Storybook.",
+        skills: ["Tailwind CSS", "CSS Modules", "Sass", "Styled Components", "Shadcn UI", "Material UI", "Ant Design", "Chakra UI", "PrimeNG", "Storybook", "Figma"],
+        color: "var(--color-accent)",
+    },
+    {
+        step: "// ARCHITECTURE",
+        title: "Scalable Systems",
+        desc: "Micro frontends, rendering strategies and state patterns, tuned for Core Web Vitals.",
+        skills: ["Micro Frontends", "Module Federation", "SSR & SSG", "State Management", "REST APIs", "GraphQL", "Core Web Vitals", "Lazy Loading", "Code Splitting"],
+        color: "var(--color-primary)",
+    },
+    {
+        step: "// QUALITY",
+        title: "a11y & Testing",
+        desc: "WCAG-minded semantic markup backed by automated unit and end-to-end coverage.",
+        skills: ["WCAG & ARIA", "Semantic HTML", "Jest", "Cross-browser Compatibility", "Unit Testing"],
+        color: "var(--color-accent)",
+    },
+    {
+        step: "// DELIVERY",
+        title: "Tooling & Cloud",
+        desc: "Fast builds, enforced code quality and automated pipelines from commit to deploy.",
+        skills: ["Vite", "Webpack & Babel", "ESLint & Prettier", "Git", "GitHub & GitLab", "CI/CD", "Vercel", "Cloudflare", "GitHub Pages"],
+        color: "var(--color-primary)",
+    },
+    {
+        step: "// AI & TEAMWORK",
+        title: "AI-Assisted Delivery",
+        desc: "LLM-assisted refactoring and prompt engineering, paired with mentoring and agile leadership.",
+        skills: ["Cursor", "Claude", "Prompt Engineering", "n8n", "Technical Leadership", "Mentoring", "Agile & Scrum"],
+        color: "var(--color-accent)",
+    },
 ];

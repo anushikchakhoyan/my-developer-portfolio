@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "@/components/primitives/Button/Button";
 import { TopNav } from "@/components/layout/TopNav";
 import { SidebarNav } from "@/components/layout/SidebarNav";
@@ -9,8 +8,8 @@ import { AboutFocusCards } from "@/components/organisms/AboutFocusCards/AboutFoc
 import { CareerAccordion } from "@/components/organisms/CareerAccordion/CareerAccordion";
 import { TestimonialSlider } from "@/components/organisms/TestimonialSlider/TestimonialSlider";
 import { TokenInspector } from "@/components/organisms/TokenInspector/TokenInspector";
-import { ArchitectureGrid } from "@/components/organisms/ArchitectureGrid/ArchitectureGrid";
 import { ContactCard } from "@/components/organisms/ContactCard/ContactCard";
+import { Skills } from "@/components/organisms/Skills/Skills";
 
 import { CAREER_DATA, TESTIMONIALS_DATA } from "@/lib/data";
 
@@ -22,7 +21,7 @@ export default function ShowcasePage() {
 
             {/* Slide 1: Hero Section */}
             <section
-                id="slide-1"
+                id="intro"
                 className="min-h-screen w-full flex flex-col justify-center items-center text-center px-6 pt-24 pb-16"
             >
                 <div className="max-w-4xl">
@@ -37,7 +36,7 @@ export default function ShowcasePage() {
                         with design-system consistency, accessibility, and testing built in from the start. 
                     </p>
                     <div className="flex gap-4 justify-center">
-                        <Link href="#slide-7">
+                        <Link href="#contact">
                             <Button variant="primary">
                                 Contact Me
                             </Button>
@@ -48,7 +47,7 @@ export default function ShowcasePage() {
 
             {/* Slide 2: About Me */}
             <section
-                id="slide-2"
+                id="about-me"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
                 <div className="max-w-4xl w-full">
@@ -67,7 +66,7 @@ export default function ShowcasePage() {
 
             {/* Slide 3: Career Timeline */}
             <section
-                id="slide-3"
+                id="career"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
                 <div className="max-w-4xl w-full">
@@ -86,7 +85,7 @@ export default function ShowcasePage() {
 
             {/* Slide 4: Testimonials */}
             <section
-                id="slide-4"
+                id="testimonials"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
                 <div className="max-w-4xl w-full">
@@ -105,45 +104,45 @@ export default function ShowcasePage() {
 
             {/* Slide 5: Design Tokens & Engine */}
             <section
-                id="slide-5"
+                id="live-demo"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
                         <span className="font-serif text-3xl text-(--color-primary) mr-2">05.</span>
                         <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                            Try the Theme Engine
+                            A live Design Token Inspector
                         </h2>
                         <p className="text-md text-(--color-text-muted) mt-1">
-                          Interactive Design Tokens: A live demo of OKLCH color tokens and native @layer architecture.
+                            Drag the hue slider and watch every component adapt.
                         </p>
                     </header>
                     <TokenInspector />
                 </div>
             </section>
 
-            {/* Slide 6: Architecture Pipeline */}
-            {/* <section
-                id="slide-6"
+            {/* Slide 6: Skills & Stack */}
+             <section
+                id="skills"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
                 <div className="max-w-4xl w-full">
                     <header className="mb-10 text-left">
                         <span className="font-serif text-3xl text-(--color-primary) mr-2">06.</span>
                         <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                            Design System Architecture
+                          Core Skills & Technologies
                         </h2>
                         <p className="text-sm text-(--color-text-muted) mt-1">
-                            Scalable end-to-end component engineering pipeline.
+                            Everything I use day to day, from code to deployment.
                         </p>
                     </header>
-                    <ArchitectureGrid />
+                    <Skills/>
                 </div>
-            </section> */}
+            </section>
 
             {/* Slide 7: Contact & Collaboration */}
             <section
-                id="slide-7"
+                id="contact"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
                 <div className="max-w-4xl w-full">

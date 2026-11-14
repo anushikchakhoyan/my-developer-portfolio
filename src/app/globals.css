@@ -56,4 +56,66 @@
         color: var(--color-text);
         transition: background-color 0.35s ease, color 0.35s ease;
     }
+
+    .gradient-border-hover {
+        position: relative;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+ 
+    .gradient-border-hover::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+ 
+    .gradient-border-hover:hover {
+        transform: translateY(-2px);
+        border-color: transparent;
+        box-shadow: 0 8px 24px color-mix(in oklch, var(--color-primary) 18%, transparent);
+    }
+ 
+    .gradient-border-hover:hover::after {
+        opacity: 1;
+    }
+ 
+    @media (prefers-reduced-motion: reduce) {
+        .gradient-border-hover,
+        .gradient-border-hover::after {
+            transition: none;
+        }
+ 
+        .gradient-border-hover:hover {
+            transform: none;
+        }
+    }
+}
+
+@keyframes skills-scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes skills-scroll-right {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@layer components {
+    .animate-scroll-linear-left {
+        animation: skills-scroll-left 45s linear infinite;
+    }
+
+    .animate-scroll-linear-right {
+        animation: skills-scroll-right 50s linear infinite;
+    }
 }
