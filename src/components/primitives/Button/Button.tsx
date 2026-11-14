@@ -56,8 +56,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
             icon ?? children
         ) : (
             <>
-                {children}
                 {icon && <span className="inline-flex items-center text-current">{icon}</span>}
+                {children}
             </>
         );
 

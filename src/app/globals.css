@@ -4,7 +4,7 @@
 
 @layer tokens {
     :root {
-        --brand-hue: 350;
+        --brand-hue: 307;
         --accent-hue: 220;
 
         /* Dark Theme Default Tokens (Obsidian Glass + Rose Orchid Accent) */

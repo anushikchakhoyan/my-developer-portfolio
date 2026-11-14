@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/primitives/Button/Button";
 
 export const TokenInspector: React.FC = () => {
-    const [hue, setHue] = useState<number>(350);
+    const [hue, setHue] = useState<number>(307); // Default hue value
 
     const handleHueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = Number(e.target.value);
@@ -63,7 +63,7 @@ export const TokenInspector: React.FC = () => {
                     style={{ background: `oklch(0.80 0.16 ${hue})` }}
                 />
                         </td>
-                        <td className="p-3 text-(--color-accent)">Primary Rose Accent &amp; Glows</td>
+                        <td className="p-3 text-(--color-accent)">Primary color</td>
                     </tr>
                     <tr>
                         <td className="p-3 font-semibold text-(--color-primary)">--color-accent</td>

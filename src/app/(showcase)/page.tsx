@@ -38,7 +38,7 @@ export default function ShowcasePage() {
                     </p>
                     <div className="flex gap-4 justify-center">
                         <Link href="#slide-7">
-                            <Button variant="primary" icon={<FiArrowUpRight size={16} />}>
+                            <Button variant="primary">
                                 Contact Me
                             </Button>
                         </Link>
@@ -57,7 +57,7 @@ export default function ShowcasePage() {
                         <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             About Me
                         </h2>
-                        <p className="text-sm text-(--color-text-muted) mt-1">
+                        <p className="text-md text-(--color-text-muted) mt-1">
                             A little about me and what I do.
                         </p>
                     </header>
@@ -76,7 +76,7 @@ export default function ShowcasePage() {
                         <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Career Timeline
                         </h2>
-                        <p className="text-sm text-(--color-text-muted) mt-1">
+                        <p className="text-md text-(--color-text-muted) mt-1">
                             7+ years of engineering impact across global companies and platforms.
                         </p>
                     </header>
@@ -95,7 +95,7 @@ export default function ShowcasePage() {
                         <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
                             Testimonials
                         </h2>
-                        <p className="text-sm text-(--color-text-muted) mt-1">
+                        <p className="text-md text-(--color-text-muted) mt-1">
                             Direct recommendations from engineering leads and directors.
                         </p>
                     </header>
@@ -112,10 +112,10 @@ export default function ShowcasePage() {
                     <header className="mb-10 text-left">
                         <span className="font-serif text-3xl text-(--color-primary) mr-2">05.</span>
                         <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                            Design Tokens &amp; Engine
+                            Try the Theme Engine
                         </h2>
-                        <p className="text-sm text-(--color-text-muted) mt-1">
-                            Native CSS Cascade Layers (`@layer`) &amp; OKLCH color space architecture.
+                        <p className="text-md text-(--color-text-muted) mt-1">
+                          Interactive Design Tokens: A live demo of OKLCH color tokens and native @layer architecture.
                         </p>
                     </header>
                     <TokenInspector />
@@ -123,7 +123,7 @@ export default function ShowcasePage() {
             </section>
 
             {/* Slide 6: Architecture Pipeline */}
-            <section
+            {/* <section
                 id="slide-6"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
             >
@@ -139,7 +139,7 @@ export default function ShowcasePage() {
                     </header>
                     <ArchitectureGrid />
                 </div>
-            </section>
+            </section> */}
 
             {/* Slide 7: Contact & Collaboration */}
             <section

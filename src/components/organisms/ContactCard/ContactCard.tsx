@@ -1,33 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
-import { BsGithub, BsCalendar2DateFill } from "react-icons/bs";
-import { FiArrowUpRight, FiDownload, FiMapPin } from "react-icons/fi";
+import { BsGithub, BsEnvelopeAtFill, BsCalendar2DateFill } from "react-icons/bs";
+import { FiMapPin } from "react-icons/fi";
 import { IoMdMailUnread } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 
 import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
 import { Button } from "@/components/primitives/Button/Button";
-import { Toast } from "@/components/primitives/Toast/Toast";
 
 export const ContactCard: React.FC = () => {
-    const [toastVisible, setToastVisible] = useState(false);
-
-    const handleDownloadCv = () => {
-        setToastVisible(true);
-        setTimeout(() => setToastVisible(false), 3500);
-        window.location.href =
-            "mailto:hello@anushui.dev?subject=Request%20for%20Anush%20Chakhoyan%20CV&body=Hi%20Anush,%0A%0APlease%20share%20your%20latest%20CV.";
-    };
-
     return (
-        <>
-            <Toast message="CV requested — Opening direct email draft..." isVisible={toastVisible} />
-
-            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 rounded-lg border border-(--color-border) bg-(--color-surface) p-8 md:p-12 max-w-4xl mx-auto w-full">
-                {/* Left Column: Pitch & Actions */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 rounded-lg border border-(--color-border) bg-(--color-surface) p-8 md:p-12 max-w-5xl mx-auto w-full">
                 <div className="flex flex-col justify-between">
                     <div>
                         <h3 className="font-serif text-3xl md:text-4xl text-(--color-text) mb-4 leading-tight">
@@ -37,17 +23,17 @@ export const ContactCard: React.FC = () => {
                             Whether it's a role, a side project, or just a question about frontend work, I'm always happy to connect and talk.
                         </p>
 
-                        <AvailabilityBadge className="mb-0">Currently Open for Senior UI / Frontend Engineering Roles</AvailabilityBadge>
+                        <AvailabilityBadge className="mb-0">Currently Open for Senior UI Frontend Engineering Roles</AvailabilityBadge>
                     </div>
 
                     <div className="flex flex-wrap gap-3">
-                        <a href="mailto:hello@anushui.dev?subject=Engineering%20Inquiry%20for%20Anush">
-                            <Button variant="outline" icon={<FiArrowUpRight size={16} />}>Hire Me / Inquire</Button>
-                        </a>
                         <a href="https://calendly.com/anush-chakhoyan-dev" target="_blank" rel="noopener noreferrer">
                             <Button variant="primary" icon={<BsCalendar2DateFill size={14} />}>
                                 Schedule a Call
                             </Button>
+                        </a>
+                          <a href="mailto:hello@anushui.dev?subject=Engineering%20Inquiry%20for%20Anush">
+                            <Button variant="outline" icon={<BsEnvelopeAtFill size={16} />}>Send me a message</Button>
                         </a>
                     </div>
                 </div>
@@ -104,18 +90,16 @@ export const ContactCard: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Action Icons: Download CV, LinkedIn, GitHub */}
-                    <div className="flex gap-2.5 pt-2">
-                        <Button iconOnly filled
-                            icon={<FiDownload size={15} />}
-                            aria-label="Download CV"
-                            onClick={handleDownloadCv}
-                        />
-                        <Button iconOnly filled href="https://linkedin.com/in/anush-chakhoyan" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />} />
-                        <Button iconOnly filled href="https://github.com/anushikchakhoyan" aria-label="GitHub Profile" icon={<BsGithub size={18} />} />
+                    {/* Action Icons: LinkedIn, GitHub */}
+                    <div className="flex flex-wrap gap-2.5 pt-2">
+                        <Button href="https://linkedin.com/in/anush-chakhoyan" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />}>
+                            Linkedin
+                        </Button>
+                        <Button href="https://github.com/anushikchakhoyan" aria-label="GitHub Profile" icon={<BsGithub size={18} />}>
+                            Github
+                        </Button>
                     </div>
                 </div>
-            </div>
-        </>
+        </div>
     );
 };
