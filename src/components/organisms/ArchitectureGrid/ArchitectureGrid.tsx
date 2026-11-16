@@ -16,7 +16,7 @@ export const ArchitectureGrid: React.FC = () => {
                      style={{ color: group.color }}>
                         {group.step}
                     </span>
-                    <h4 className="mb-2 text-lg font-bold text-(--color-text)">{group.title}</h4>
+                    <h3 className="mb-2 text-lg font-bold text-(--color-text)">{group.title}</h3>
                     <p className="text-xs leading-relaxed text-(--color-text-muted)">{group.desc}</p>
                 </div>
             ))}

@@ -15,7 +15,7 @@ export const TokenInspector: React.FC = () => {
     return (
         <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6 md:p-8 max-w-4xl mx-auto w-full">
             <div className="mb-6 p-4 rounded-md bg-(--color-surface-hover) border-l-4 border-(--color-primary)">
-                <h4 className="font-bold text-base text-(--color-text) mb-1">Live Token Inspector</h4>
+                <h3 className="font-bold text-base text-(--color-text) mb-1">Live Token Inspector</h3>
                 <p className="text-xs md:text-sm text-(--color-text-muted)">
                     This portfolio dynamically computes colors using OKLCH color spaces. Tweak the hue parameter below to inspect dynamic real-time contrast calculations.
                 </p>
@@ -23,10 +23,11 @@ export const TokenInspector: React.FC = () => {
 
             {/* Hue Range Slider */}
             <div className="flex items-center gap-4 mb-6 p-4 rounded-md border border-(--color-border) bg-(--color-bg)">
-                <label className="font-mono text-sm text-(--color-primary) font-semibold whitespace-nowrap">
-                    Brand Hue: {hue}
+                <label htmlFor="brand-hue" className="font-mono text-sm text-(--color-primary) font-semibold whitespace-nowrap">
+                    Brand Hue: <output htmlFor="brand-hue">{hue}</output>
                 </label>
                 <input
+                    id="brand-hue"
                     type="range"
                     min="0"
                     max="360"

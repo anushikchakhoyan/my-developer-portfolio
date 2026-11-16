@@ -26,7 +26,7 @@ export const Skills: React.FC = () => {
                     <span className="mb-2 block font-mono text-xs font-semibold tracking-wider text-(--color-primary)">
                      // EDUCATION
                     </span>
-                    <h4 className="text-lg font-bold text-(--color-text)">Technology and Enterprise</h4>
+                    <h3 className="text-lg font-bold text-(--color-text)">Technology and Enterprise</h3>
                     <p className="mt-1 text-xs text-(--color-text-muted)">Shirak State University, Armenia</p>
                 </div>
                 <span className="font-mono text-xs text-(--color-text-muted)">2017 - 2022</span>

@@ -41,7 +41,7 @@ export const ContactCard: React.FC = () => {
 
                 {/* Right Column: Channels */}
                 <div className="space-y-4 pt-6 lg:pt-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-(--color-border)">
-                    <h4 className="font-bold text-base text-(--color-text) mb-3">Direct Channels</h4>
+                    <h3 className="font-bold text-base text-(--color-text) mb-3">Direct Channels</h3>
 
                     {/* Email */}
                     <div className="flex items-center gap-3 py-2 border-b border-(--color-border)">

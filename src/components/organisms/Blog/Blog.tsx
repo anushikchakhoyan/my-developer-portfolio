@@ -45,11 +45,8 @@ const formatDate = (iso: string, lang: Lang) => {
     const [year, month] = iso.split("-").map(Number);
     return `${MONTHS[lang][month - 1]} ${year}`;
 };
-/* -------------------------------------------------------------------------- */
-/*  Component                                                                 */
-/* -------------------------------------------------------------------------- */
 
-const CARD_GAP = 16; // keep in sync with gap-4
+const CARD_GAP = 16;
 
 export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }) => {
     const [filter, setFilter] = useState<Filter>("all");
@@ -211,12 +208,12 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                                     </span>
                                 </div>
 
-                                <h4
+                                <h3
                                     lang={article.lang}
                                     className="mb-2 text-lg leading-snug font-bold text-(--color-text)"
                                 >
                                     {article.title}
-                                </h4>
+                                </h3>
                                 <p
                                     lang={article.lang}
                                     className="mb-5 text-xs leading-relaxed text-(--color-text-muted)"
