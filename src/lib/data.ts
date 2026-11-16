@@ -182,3 +182,172 @@ export const SKILL_GROUPS: SkillGroup[] = [
         color: "var(--color-accent)",
     },
 ];
+
+export type Lang = "en" | "hy";
+
+export type Article = {
+    id: string;
+    title: string;
+    excerpt: string;
+    url: string;
+    date: string;
+    readTime: number;
+    lang: Lang;
+    tags?: string[];
+};
+
+// Newest first (the Blog component also sorts by date, so order here is only for readability)
+export const ARTICLES: Article[] = [
+    {
+        id: "design-system",
+        title: "What is a Design System?",
+        excerpt:
+            "A true design system is a scalable contract between design and code, a shared language for visual consistency across channels.",
+        url: "https://medium.com/@anushchakhoyan/what-is-a-design-system-1a09d638d6f0",
+        date: "2026-10-04",
+        readTime: 3,
+        lang: "en",
+        tags: ["Design Systems"],
+    },
+    {
+        id: "cube-css",
+        title: "CUBE CSS Cheatsheet",
+        excerpt:
+            "CUBE CSS stands for Composition, Utility, Block, Exception. It works with the natural cascade instead of fighting it.",
+        url: "https://medium.com/@anushchakhoyan/cube-css-cheatsheet-472ff40d0df9",
+        date: "2026-09-16",
+        readTime: 3,
+        lang: "en",
+        tags: ["CSS", "Methodology"],
+    },
+    {
+        id: "page-load-time",
+        title: "Performance: Page load time",
+        excerpt:
+            "A large DOM hurts performance: the browser has to parse it and build a render tree before anything is painted.",
+        url: "https://medium.com/stackademic/performance-page-load-time-84ba04a98fe0",
+        date: "2026-06-25",
+        readTime: 3,
+        lang: "en",
+        tags: ["Performance", "DOM"],
+    },
+    {
+        id: "css-variable-animations",
+        title: "[SOLVED] CSS Variable Animations",
+        excerpt:
+            "Custom properties changed how we organize CSS, but they had one major flaw. Here is how animating them is finally solved.",
+        url: "https://medium.com/stackademic/solved-css-variable-animations-60c06049dffb",
+        date: "2026-03-24",
+        readTime: 2,
+        lang: "en",
+        tags: ["CSS", "Animation"],
+    },
+    {
+        id: "css-interview-questions",
+        title: "Թոփ CSS Հարցեր Հարցազրույցի Համար",
+        excerpt:
+            "Հարցազրույցներում CSS հարցերը հաճախ ստուգում են գիտելիքները հիմնական կոնցեպտների, լավագույն պրակտիկաների, օպտիմիզացիայի և ժամանակակից հատկությունների մասին։",
+        url: "https://medium.com/@anushchakhoyan/%D5%A9%D5%B8%D6%83-css-%D5%B0%D5%A1%D6%80%D6%81%D5%A5%D6%80-%D5%B0%D5%A1%D6%80%D6%81%D5%A1%D5%A6%D6%80%D5%B8%D6%82%D5%B5%D6%81%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-8ea5a7bcebc2",
+        date: "2026-01-29",
+        readTime: 4,
+        lang: "hy",
+        tags: ["CSS", "Interview"],
+    },
+    {
+        id: "hardware-acceleration",
+        title: "Hardware Acceleration CSS-ում",
+        excerpt:
+            "Ժամանակակից վեբ-հավելվածներում օգտատերերի փորձառության (UX) որակը մեծ մասամբ որոշվում է անիմացիաների սահունությամբ։",
+        url: "https://medium.com/@anushchakhoyan/hardware-acceleration-css-%D5%B8%D6%82%D5%B4-2e9a3bd63d95",
+        date: "2025-11-25",
+        readTime: 4,
+        lang: "hy",
+        tags: ["CSS", "Performance"],
+    },
+    {
+        id: "svelte-sveltekit",
+        title: "Ինչո՞ւ ընտրել Svelte և SvelteKit քո հաջորդ նախագծի համար",
+        excerpt: "Ուղեցույց սկսնակների և փորձառուների համար՝ կայքեր ստեղծելու նոր մոտեցումներով։",
+        url: "https://medium.com/@anushchakhoyan/%D5%AB%D5%B6%D5%B9%D5%B8-%D6%82-%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-svelte-%D6%87-sveltekit-%D6%84%D5%B8-%D5%B0%D5%A1%D5%BB%D5%B8%D6%80%D5%A4-%D5%B6%D5%A1%D5%AD%D5%A1%D5%A3%D5%AE%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-f248a9304d48",
+        date: "2025-06-12",
+        readTime: 9,
+        lang: "hy",
+        tags: ["Svelte", "SvelteKit"],
+    },
+    {
+        id: "accessible-website",
+        title: "Ինչպե՞ս կարող եք Ձեր կայքը դարձնել հաշմանդամություն ունեցող անձանց համար հասանելի",
+        excerpt:
+            "Գիտե՞ք, որ աշխարհում ավելի քան մեկ միլիարդ մարդ ունի հաշմանդամություն։ Արդյո՞ք Ձեր կայքը հասանելի է նրանց համար։",
+        url: "https://medium.com/@anushchakhoyan/%D5%B0%D5%A1%D5%B4%D5%A1%D6%81%D5%A1%D5%B6%D6%81%D5%A8-%D5%A2%D5%B8%D5%AC%D5%B8%D6%80%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-%D5%AB%D5%B6%D5%B9%D5%BA%D5%A5-%D5%BD-%D5%A7-aria-%D5%B6-%D5%A4%D5%A1%D6%80%D5%B1%D5%B6%D5%B8%D6%82%D5%B4-%D5%B1%D5%A5%D6%80-%D5%AF%D5%A1%D5%B5%D6%84%D5%A8-%D5%B0%D5%A1%D5%BD%D5%A1%D5%B6%D5%A5%D5%AC%D5%AB-%D5%A2%D5%B8%D5%AC%D5%B8%D6%80%D5%AB%D5%B6-1579a1476588",
+        date: "2025-06-02",
+        readTime: 4,
+        lang: "hy",
+        tags: ["Accessibility"],
+    },
+    {
+        id: "rgb-oklch",
+        title: "RGB-ի մահվան լուրերը չափազանցված են՞ թե՞ իսկապես ավարտվում է դարաշրջանը",
+        excerpt:
+            "Տեղեկատվական և պրակտիկ հոդված ժամանակակից գունային ձևաչափերի՝ lab, lch, oklab, oklch, hsl, մասին և դրանց համեմատությունը դասական hex և rgba ձևաչափերի հետ։",
+        url: "https://medium.com/@anushchakhoyan/rgb-%D5%AB-%D5%B4%D5%A1%D5%B0%D5%BE%D5%A1%D5%B6-%D5%AC%D5%B8%D6%82%D6%80%D5%A5%D6%80%D5%A8-%D5%B9%D5%A1%D6%83%D5%A1%D5%A6%D5%A1%D5%B6%D6%81%D5%BE%D5%A1%D5%AE-%D5%A5%D5%B6-%D5%A9%D5%A5-%D5%AB%D5%BD%D5%AF%D5%A1%D5%BA%D5%A5%D5%BD-%D5%A1%D5%BE%D5%A1%D6%80%D5%BF%D5%BE%D5%B8%D6%82%D5%B4-%D5%A7-%D5%A4%D5%A1%D6%80%D5%A1%D5%B7%D6%80%D5%BB%D5%A1%D5%B6%D5%A8-1bf7f19f521f",
+        date: "2025-05-19",
+        readTime: 4,
+        lang: "hy",
+        tags: ["CSS", "Color"],
+    },
+    {
+        id: "aria-beginners",
+        title: "Make Your Website Accessible to All: A Beginner’s Guide to ARIA",
+        excerpt:
+            "A practical introduction to ARIA’s power in building web content for everyone, including users with disabilities.",
+        url: "https://medium.com/stackademic/aria-accessible-rich-internet-applications-3da57ac03a3c",
+        date: "2024-11-04",
+        readTime: 3,
+        lang: "en",
+        tags: ["Accessibility", "ARIA"],
+    },
+    {
+        id: "css-units-font-size",
+        title: "Ինչպե՞ս վարպետորեն կառավարել կայքի տեքստի չափը՝ CSS-ի միջոցով",
+        excerpt:
+            "CSS-ում միավորներն (այսուհետ՝ unit) օգտագործվում են էլեմենտի չափը նշելու համար։ Նրանք կարող են դասակարգվել Absolute և Relative unit-ների։",
+        url: "https://medium.com/@anushchakhoyan/css-units-font-size-46a3b96db79",
+        date: "2023-09-13",
+        readTime: 3,
+        lang: "hy",
+        tags: ["CSS", "Typography"],
+    },
+    {
+        id: "css-focus-selector",
+        title: "CSS Focus Selector",
+        excerpt: "Ձեր վեբ կայքը ավելի ինտերակտիվ դարձնելու ժամանակն է։ Սովորե՛ք CSS Focus Selector-ները հիմա։",
+        url: "https://medium.com/@anushchakhoyan/%D5%B5%D5%B8%D6%82%D6%80%D5%A1%D6%81%D5%B6%D5%A5%D5%B6%D6%84-focus-selector-%D5%A8-dae08236bb3e",
+        date: "2023-07-03",
+        readTime: 2,
+        lang: "hy",
+        tags: ["CSS", "Accessibility"],
+    },
+    {
+        id: "browser-rendering",
+        title: "[Rendering] How the Browser Renders a Web Page — CSSOM, Render Engine",
+        excerpt:
+            "Understanding what goes on inside a browser: how it interprets code and how parsing helps pages load faster.",
+        url: "https://medium.com/stackademic/how-the-browser-renders-a-web-page-cssom-render-engine-c395d9f9cbda",
+        date: "2023-05-26",
+        readTime: 6,
+        lang: "en",
+        tags: ["Browser", "Rendering"],
+    },
+    {
+        id: "styled-components",
+        title: "[CSS] Taking React Styling to the Next Level — Styled Components",
+        excerpt:
+            "What actually is CSS-in-JS? What do Styled Components mean, and how do you use them? Find the answers in this article.",
+        url: "https://medium.com/javascript-in-plain-english/taking-your-react-styling-to-the-next-level-with-styled-components-aa425078a0c2",
+        date: "2023-05-09",
+        readTime: 7,
+        lang: "en",
+        tags: ["React", "Styled Components"],
+    },
+];

@@ -10,6 +10,7 @@ import { FaClock } from "react-icons/fa6";
 
 import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
 import { Button } from "@/components/primitives/Button/Button";
+import { siteConfig } from "@/config/site";
 
 export const ContactCard: React.FC = () => {
     return (
@@ -27,12 +28,12 @@ export const ContactCard: React.FC = () => {
                     </div>
 
                     <div className="flex flex-wrap gap-3">
-                        <a href="https://calendly.com/anush-chakhoyan-dev" target="_blank" rel="noopener noreferrer">
+                        <a href={siteConfig.links.calendly} target="_blank" rel="noopener noreferrer">
                             <Button variant="primary" icon={<BsCalendar2DateFill size={14} />}>
                                 Schedule a Call
                             </Button>
                         </a>
-                          <a href="mailto:hello@anushui.dev?subject=Engineering%20Inquiry%20for%20Anush">
+                          <a href={`mailto:${siteConfig.email}?subject=Engineering%20Inquiry%20for%20Anush`}>
                             <Button variant="outline" icon={<BsEnvelopeAtFill size={16} />}>Send me a message</Button>
                         </a>
                     </div>
@@ -49,8 +50,8 @@ export const ContactCard: React.FC = () => {
                         </div>
                         <div>
                             <div className="font-mono text-[0.7rem] uppercase text-(--color-text-dim)">Direct Email</div>
-                            <a href="mailto:hello@anushui.dev" className="text-sm font-semibold text-(--color-text) hover:text-(--color-primary)">
-                                hello@anushui.dev
+                            <a href={`mailto:${siteConfig.email}`} className="text-sm font-semibold text-(--color-text) hover:text-(--color-primary)">
+                                {siteConfig.email}
                             </a>
                         </div>
                     </div>
@@ -92,10 +93,10 @@ export const ContactCard: React.FC = () => {
 
                     {/* Action Icons: LinkedIn, GitHub */}
                     <div className="flex flex-wrap gap-2.5 pt-2">
-                        <Button href="https://linkedin.com/in/anush-chakhoyan" aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />}>
+                        <Button href={siteConfig.links.linkedin} aria-label="LinkedIn Profile" icon={<FaLinkedinIn size={18} />}>
                             Linkedin
                         </Button>
-                        <Button href="https://github.com/anushikchakhoyan" aria-label="GitHub Profile" icon={<BsGithub size={18} />}>
+                        <Button href={siteConfig.links.github} aria-label="GitHub Profile" icon={<BsGithub size={18} />}>
                             Github
                         </Button>
                     </div>

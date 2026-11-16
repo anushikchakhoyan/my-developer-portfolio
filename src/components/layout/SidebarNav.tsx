@@ -9,6 +9,7 @@ const SLIDES = [
     { id: "testimonials", title: "Testimonials" },
     { id: "live-demo", title: "Live Demo" },
     { id: "skills", title: "Skills" },
+    { id: "blog", title: "Blog" },
     { id: "contact", title: "Contact" },
 ];
 

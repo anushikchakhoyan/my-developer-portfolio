@@ -10,6 +10,7 @@ import { TestimonialSlider } from "@/components/organisms/TestimonialSlider/Test
 import { TokenInspector } from "@/components/organisms/TokenInspector/TokenInspector";
 import { ContactCard } from "@/components/organisms/ContactCard/ContactCard";
 import { Skills } from "@/components/organisms/Skills/Skills";
+import { Blog } from "@/components/organisms/Blog/Blog";
 
 import { CAREER_DATA, TESTIMONIALS_DATA } from "@/lib/data";
 
@@ -140,7 +141,26 @@ export default function ShowcasePage() {
                 </div>
             </section>
 
-            {/* Slide 7: Contact & Collaboration */}
+            {/* Slide 7: Blog */}
+             <section
+                id="blog"
+                className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
+            >
+                <div className="max-w-4xl w-full">
+                    <header className="mb-10 text-left">
+                        <span className="font-serif text-3xl text-(--color-primary) mr-2">07.</span>
+                        <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
+                          Blog
+                        </h2>
+                        <p className="text-sm text-(--color-text-muted) mt-1">
+                            My thoughts on design, development, and everything in between.
+                        </p>
+                    </header>
+                    <Blog />
+                </div>
+            </section>
+
+            {/* Slide 8: Contact & Collaboration */}
             <section
                 id="contact"
                 className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
