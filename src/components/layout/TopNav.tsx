@@ -41,13 +41,16 @@ export const TopNav: React.FC = () => {
                 Anush Chakhoyan
             </Link>
             <div className="flex gap-2.5">
-                <Button
-                    icon={<FiDownload size={15} />}
-                    aria-label="Download CV"
-                    onClick={handleDownloadCv}
-                >
-                 Download CV
-                </Button>
+                <span className="hidden sm:block">
+                     <Button
+                       size="sm"
+                       icon={<FiDownload size={15} />}
+                       aria-label="Download CV"
+                       onClick={handleDownloadCv}
+                      >
+                        Download CV
+                    </Button>
+                </span>
                 <Button
                     iconOnly
                     filled
