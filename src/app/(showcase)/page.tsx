@@ -4,9 +4,10 @@ import { TopNav } from "@/components/layout/TopNav";
 import { SidebarNav } from "@/components/layout/SidebarNav";
 import { Footer } from "@/components/layout/Footer";
 
+import ProjectInquirySection from "@/components/organisms/ProjectInquiry/ProjectInquirySection";
+import { TestimonialSlider } from "@/components/organisms/TestimonialSlider/TestimonialSlider";
 import { AboutFocusCards } from "@/components/organisms/AboutFocusCards/AboutFocusCards";
 import { CareerAccordion } from "@/components/organisms/CareerAccordion/CareerAccordion";
-import { TestimonialSlider } from "@/components/organisms/TestimonialSlider/TestimonialSlider";
 import { TokenInspector } from "@/components/organisms/TokenInspector/TokenInspector";
 import { ContactCard } from "@/components/organisms/ContactCard/ContactCard";
 import { Skills } from "@/components/organisms/Skills/Skills";
@@ -160,7 +161,7 @@ export default function ShowcasePage() {
                     </div>
                 </section>
 
-                {/* Slide 8: Contact & Collaboration */}
+                {/* Slide 8: Contact */}
                 <section
                     id="contact"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
@@ -176,6 +177,25 @@ export default function ShowcasePage() {
                             </p>
                         </header>
                         <ContactCard />
+                    </div>
+                </section>
+
+                {/* Slide 9: Collaboration */}
+                <section
+                    id="collaboration"
+                    className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
+                >
+                    <div className="max-w-4xl w-full">
+                        <header className="mb-10 text-left">
+                            <span className="font-serif text-3xl text-(--color-primary) mr-2">08.</span>
+                            <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
+                                Custom Website Builds
+                            </h2>
+                            <p className="text-sm text-(--color-text-muted) mt-1">
+                                Landing pages, wedding sites, and personal portfolios—built from scratch.
+                            </p>
+                        </header>
+                        <ProjectInquirySection />
                     </div>
                 </section>
             </main>

@@ -10,4 +10,7 @@ export const siteConfig = {
         medium: "https://medium.com/@your-handle",
         calendly: "https://calendly.com/anush-chakhoyan-dev",
     },
+    EMAIL_JS_PUBLIC_KEY: 'GfIJTEVgw5FezJPQg',
+    EMAIL_JS_SERVICE_ID: 'service_r2nsibm',
+    EMAIL_JS_TEMPLATE_ID: 'template_hks52tc',
 } as const;
