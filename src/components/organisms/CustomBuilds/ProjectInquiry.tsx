@@ -11,7 +11,7 @@ import { BsSendFill } from "react-icons/bs";
 import { HiOutlineSparkles, HiOutlineMail } from "react-icons/hi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-import InputField from "../../../primitives/InputField";
+import InputField from "../../primitives/InputField";
 import { Button } from "@/components/primitives/Button";
 import { Textarea } from "@/components/primitives/Textarea";
 import PhoneField from "@/components/primitives/PhoneField";

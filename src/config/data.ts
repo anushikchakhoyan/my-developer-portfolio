@@ -208,7 +208,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/what-is-a-design-system-1a09d638d6f0",
         date: "2026-10-04",
         readTime: 3,
-        Locale: "en",
+        lang: "en",
         tags: ["Design Systems"],
     },
     {
@@ -219,7 +219,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/cube-css-cheatsheet-472ff40d0df9",
         date: "2026-09-16",
         readTime: 3,
-        Locale: "en",
+        lang: "en",
         tags: ["CSS", "Methodology"],
     },
     {
@@ -230,7 +230,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/performance-page-load-time-84ba04a98fe0",
         date: "2026-06-25",
         readTime: 3,
-        Locale: "en",
+        lang: "en",
         tags: ["Performance", "DOM"],
     },
     {
@@ -241,7 +241,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/solved-css-variable-animations-60c06049dffb",
         date: "2026-03-24",
         readTime: 2,
-        Locale: "en",
+        lang: "en",
         tags: ["CSS", "Animation"],
     },
     {
@@ -252,7 +252,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%A9%D5%B8%D6%83-css-%D5%B0%D5%A1%D6%80%D6%81%D5%A5%D6%80-%D5%B0%D5%A1%D6%80%D6%81%D5%A1%D5%A6%D6%80%D5%B8%D6%82%D5%B5%D6%81%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-8ea5a7bcebc2",
         date: "2026-01-29",
         readTime: 4,
-        Locale: "hy",
+        lang: "hy",
         tags: ["CSS", "Interview"],
     },
     {
@@ -263,7 +263,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/hardware-acceleration-css-%D5%B8%D6%82%D5%B4-2e9a3bd63d95",
         date: "2025-11-25",
         readTime: 4,
-        Locale: "hy",
+        lang: "hy",
         tags: ["CSS", "Performance"],
     },
     {
@@ -273,7 +273,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%AB%D5%B6%D5%B9%D5%B8-%D6%82-%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-svelte-%D6%87-sveltekit-%D6%84%D5%B8-%D5%B0%D5%A1%D5%BB%D5%B8%D6%80%D5%A4-%D5%B6%D5%A1%D5%AD%D5%A1%D5%A3%D5%AE%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-f248a9304d48",
         date: "2025-06-12",
         readTime: 9,
-        Locale: "hy",
+        lang: "hy",
         tags: ["Svelte", "SvelteKit"],
     },
     {
@@ -284,7 +284,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%B0%D5%A1%D5%B4%D5%A1%D6%81%D5%A1%D5%B6%D6%81%D5%A8-%D5%A2%D5%B8%D5%AC%D5%B8%D6%80%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-%D5%AB%D5%B6%D5%B9%D5%BA%D5%A5-%D5%BD-%D5%A7-aria-%D5%B6-%D5%A4%D5%A1%D6%80%D5%B1%D5%B6%D5%B8%D6%82%D5%B4-%D5%B1%D5%A5%D6%80-%D5%AF%D5%A1%D5%B5%D6%84%D5%A8-%D5%B0%D5%A1%D5%BD%D5%A1%D5%B6%D5%A5%D5%AC%D5%AB-%D5%A2%D5%B8%D5%AC%D5%B8%D6%80%D5%AB%D5%B6-1579a1476588",
         date: "2025-06-02",
         readTime: 4,
-        Locale: "hy",
+        lang: "hy",
         tags: ["Accessibility"],
     },
     {
@@ -295,7 +295,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/rgb-%D5%AB-%D5%B4%D5%A1%D5%B0%D5%BE%D5%A1%D5%B6-%D5%AC%D5%B8%D6%82%D6%80%D5%A5%D6%80%D5%A8-%D5%B9%D5%A1%D6%83%D5%A1%D5%A6%D5%A1%D5%B6%D6%81%D5%BE%D5%A1%D5%AE-%D5%A5%D5%B6-%D5%A9%D5%A5-%D5%AB%D5%BD%D5%AF%D5%A1%D5%BA%D5%A5%D5%BD-%D5%A1%D5%BE%D5%A1%D6%80%D5%BF%D5%BE%D5%B8%D6%82%D5%B4-%D5%A7-%D5%A4%D5%A1%D6%80%D5%A1%D5%B7%D6%80%D5%BB%D5%A1%D5%B6%D5%A8-1bf7f19f521f",
         date: "2025-05-19",
         readTime: 4,
-        Locale: "hy",
+        lang: "hy",
         tags: ["CSS", "Color"],
     },
     {
@@ -306,7 +306,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/aria-accessible-rich-internet-applications-3da57ac03a3c",
         date: "2024-11-04",
         readTime: 3,
-        Locale: "en",
+        lang: "en",
         tags: ["Accessibility", "ARIA"],
     },
     {
@@ -317,7 +317,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/css-units-font-size-46a3b96db79",
         date: "2023-09-13",
         readTime: 3,
-        Locale: "hy",
+        lang: "hy",
         tags: ["CSS", "Typography"],
     },
     {
@@ -327,7 +327,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%B5%D5%B8%D6%82%D6%80%D5%A1%D6%81%D5%B6%D5%A5%D5%B6%D6%84-focus-selector-%D5%A8-dae08236bb3e",
         date: "2023-07-03",
         readTime: 2,
-        Locale: "hy",
+        lang: "hy",
         tags: ["CSS", "Accessibility"],
     },
     {
@@ -338,7 +338,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/how-the-browser-renders-a-web-page-cssom-render-engine-c395d9f9cbda",
         date: "2023-05-26",
         readTime: 6,
-        Locale: "en",
+        lang: "en",
         tags: ["Browser", "Rendering"],
     },
     {
@@ -349,7 +349,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/javascript-in-plain-english/taking-your-react-styling-to-the-next-level-with-styled-components-aa425078a0c2",
         date: "2023-05-09",
         readTime: 7,
-        Locale: "en",
+        lang: "en",
         tags: ["React", "Styled Components"],
     },
 ];
