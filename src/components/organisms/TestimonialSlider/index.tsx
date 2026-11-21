@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { TestimonialItem } from "@/lib/data";
+import { TestimonialItem } from "@/config/data";
 
 interface TestimonialSliderProps {
     testimonials: TestimonialItem[];

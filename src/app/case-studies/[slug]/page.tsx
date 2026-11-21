@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-import { getAllCaseStudies, getCaseStudyBySlug } from "@/lib/mdx";
+import { getAllCaseStudies, getCaseStudyBySlug } from "@/config/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export async function generateStaticParams() {

@@ -1,3 +1,9 @@
+import { ReactNode } from "react";
+
+export type Locale = "en" | "hy";
+
+export type WebsiteType = "Landing Page" | "Wedding Website" | "Personal Portfolio";
+
 export interface CareerItem {
     id: string;
     company: string;
@@ -31,7 +37,6 @@ export interface SkillGroup {
     skills: string[];
     color: string;
 };
-
 
 export const CAREER_DATA: CareerItem[] = [
     {
@@ -183,8 +188,6 @@ export const SKILL_GROUPS: SkillGroup[] = [
     },
 ];
 
-export type Lang = "en" | "hy";
-
 export type Article = {
     id: string;
     title: string;
@@ -192,21 +195,20 @@ export type Article = {
     url: string;
     date: string;
     readTime: number;
-    lang: Lang;
+    lang: Locale;
     tags?: string[];
 };
 
-// Newest first (the Blog component also sorts by date, so order here is only for readability)
 export const ARTICLES: Article[] = [
     {
         id: "design-system",
         title: "What is a Design System?",
         excerpt:
-            "A true design system is a scalable contract between design and code, a shared language for visual consistency across channels.",
+            "A true design system is a scalable contract between design and code, a shared Localeuage for visual consistency across channels.",
         url: "https://medium.com/@anushchakhoyan/what-is-a-design-system-1a09d638d6f0",
         date: "2026-10-04",
         readTime: 3,
-        lang: "en",
+        Locale: "en",
         tags: ["Design Systems"],
     },
     {
@@ -217,7 +219,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/cube-css-cheatsheet-472ff40d0df9",
         date: "2026-09-16",
         readTime: 3,
-        lang: "en",
+        Locale: "en",
         tags: ["CSS", "Methodology"],
     },
     {
@@ -228,7 +230,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/performance-page-load-time-84ba04a98fe0",
         date: "2026-06-25",
         readTime: 3,
-        lang: "en",
+        Locale: "en",
         tags: ["Performance", "DOM"],
     },
     {
@@ -239,7 +241,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/solved-css-variable-animations-60c06049dffb",
         date: "2026-03-24",
         readTime: 2,
-        lang: "en",
+        Locale: "en",
         tags: ["CSS", "Animation"],
     },
     {
@@ -250,7 +252,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%A9%D5%B8%D6%83-css-%D5%B0%D5%A1%D6%80%D6%81%D5%A5%D6%80-%D5%B0%D5%A1%D6%80%D6%81%D5%A1%D5%A6%D6%80%D5%B8%D6%82%D5%B5%D6%81%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-8ea5a7bcebc2",
         date: "2026-01-29",
         readTime: 4,
-        lang: "hy",
+        Locale: "hy",
         tags: ["CSS", "Interview"],
     },
     {
@@ -261,7 +263,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/hardware-acceleration-css-%D5%B8%D6%82%D5%B4-2e9a3bd63d95",
         date: "2025-11-25",
         readTime: 4,
-        lang: "hy",
+        Locale: "hy",
         tags: ["CSS", "Performance"],
     },
     {
@@ -271,7 +273,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%AB%D5%B6%D5%B9%D5%B8-%D6%82-%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-svelte-%D6%87-sveltekit-%D6%84%D5%B8-%D5%B0%D5%A1%D5%BB%D5%B8%D6%80%D5%A4-%D5%B6%D5%A1%D5%AD%D5%A1%D5%A3%D5%AE%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-f248a9304d48",
         date: "2025-06-12",
         readTime: 9,
-        lang: "hy",
+        Locale: "hy",
         tags: ["Svelte", "SvelteKit"],
     },
     {
@@ -282,7 +284,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%B0%D5%A1%D5%B4%D5%A1%D6%81%D5%A1%D5%B6%D6%81%D5%A8-%D5%A2%D5%B8%D5%AC%D5%B8%D6%80%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-%D5%AB%D5%B6%D5%B9%D5%BA%D5%A5-%D5%BD-%D5%A7-aria-%D5%B6-%D5%A4%D5%A1%D6%80%D5%B1%D5%B6%D5%B8%D6%82%D5%B4-%D5%B1%D5%A5%D6%80-%D5%AF%D5%A1%D5%B5%D6%84%D5%A8-%D5%B0%D5%A1%D5%BD%D5%A1%D5%B6%D5%A5%D5%AC%D5%AB-%D5%A2%D5%B8%D5%AC%D5%B8%D6%80%D5%AB%D5%B6-1579a1476588",
         date: "2025-06-02",
         readTime: 4,
-        lang: "hy",
+        Locale: "hy",
         tags: ["Accessibility"],
     },
     {
@@ -293,7 +295,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/rgb-%D5%AB-%D5%B4%D5%A1%D5%B0%D5%BE%D5%A1%D5%B6-%D5%AC%D5%B8%D6%82%D6%80%D5%A5%D6%80%D5%A8-%D5%B9%D5%A1%D6%83%D5%A1%D5%A6%D5%A1%D5%B6%D6%81%D5%BE%D5%A1%D5%AE-%D5%A5%D5%B6-%D5%A9%D5%A5-%D5%AB%D5%BD%D5%AF%D5%A1%D5%BA%D5%A5%D5%BD-%D5%A1%D5%BE%D5%A1%D6%80%D5%BF%D5%BE%D5%B8%D6%82%D5%B4-%D5%A7-%D5%A4%D5%A1%D6%80%D5%A1%D5%B7%D6%80%D5%BB%D5%A1%D5%B6%D5%A8-1bf7f19f521f",
         date: "2025-05-19",
         readTime: 4,
-        lang: "hy",
+        Locale: "hy",
         tags: ["CSS", "Color"],
     },
     {
@@ -304,7 +306,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/aria-accessible-rich-internet-applications-3da57ac03a3c",
         date: "2024-11-04",
         readTime: 3,
-        lang: "en",
+        Locale: "en",
         tags: ["Accessibility", "ARIA"],
     },
     {
@@ -315,7 +317,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/css-units-font-size-46a3b96db79",
         date: "2023-09-13",
         readTime: 3,
-        lang: "hy",
+        Locale: "hy",
         tags: ["CSS", "Typography"],
     },
     {
@@ -325,7 +327,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/@anushchakhoyan/%D5%B5%D5%B8%D6%82%D6%80%D5%A1%D6%81%D5%B6%D5%A5%D5%B6%D6%84-focus-selector-%D5%A8-dae08236bb3e",
         date: "2023-07-03",
         readTime: 2,
-        lang: "hy",
+        Locale: "hy",
         tags: ["CSS", "Accessibility"],
     },
     {
@@ -336,7 +338,7 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/stackademic/how-the-browser-renders-a-web-page-cssom-render-engine-c395d9f9cbda",
         date: "2023-05-26",
         readTime: 6,
-        lang: "en",
+        Locale: "en",
         tags: ["Browser", "Rendering"],
     },
     {
@@ -347,7 +349,156 @@ export const ARTICLES: Article[] = [
         url: "https://medium.com/javascript-in-plain-english/taking-your-react-styling-to-the-next-level-with-styled-components-aa425078a0c2",
         date: "2023-05-09",
         readTime: 7,
-        lang: "en",
+        Locale: "en",
         tags: ["React", "Styled Components"],
+    },
+];
+
+export interface LocalizedBuildPackage {
+    title: string;
+    subtitle: string;
+    tag?: string;
+    price: string;
+    turnaround: string;
+    badge?: string;
+    ctaLabel: string;
+    selectedLabel?: string;
+    includedTitle: string;
+    features: string[];
+}
+
+export interface BuildPackage {
+    slug: "landing" | "wedding" | "personal";
+    value: WebsiteType;
+    icon?: ReactNode;
+    featured?: boolean;
+    content: Record<Locale, LocalizedBuildPackage>;
+}
+
+export const BUILD_PACKAGES: BuildPackage[] = [
+    {
+        slug: "landing",
+        value: "Landing Page",
+        content: {
+            en: {
+                title: "Landing Page",
+                subtitle: "A fast, conversion-focused single page built around your offer or launch.",
+                price: "",
+                turnaround: "5–10 days",
+                ctaLabel: "Select Landing Page",
+                selectedLabel: "Selected Below",
+                includedTitle: "What’s included",
+                features: [
+                    "Custom design tailored to your style and brand identity",
+                    "Clear structure with overview, benefits, pricing, and testimonials",
+                    "Direct contact form or buttons to Instagram, WhatsApp, or Telegram",
+                    "Fully responsive layout for mobile and desktop screens",
+                    "Fast load speeds, SEO essentials, and custom domain link",
+                ],
+            },
+            hy: {
+                title: "Landing Page (Վայրէջքի էջ)",
+                subtitle: "Արագ և կենտրոնացված էջ՝ ձեր առաջարկի կամ ծառայության շուրջ հաճախորդներ ներգրավելու համար։",
+                price: "",
+                turnaround: "5–10 օր",
+                ctaLabel: "Ընտրել փաթեթը",
+                selectedLabel: "Ընտրված է ներքևում",
+                includedTitle: "Ինչ է ներառում",
+                features: [
+                    "Գրավիչ դիզայն՝ ձեր ոճին և բրենդին համապատասխան",
+                    "Հստակ կառուցվածք՝ նկարագրություն, առավելություններ, գներ, կարծիքներ",
+                    "Կապի ձև կամ կոճակ՝ ուղիղ դեպի Instagram, WhatsApp կամ Telegram",
+                    "Հարմարեցում հեռախոսի և համակարգչի համար",
+                    "Արագ բեռնում և սեփական հղում",
+                ],
+            },
+        },
+    },
+    {
+        slug: "wedding",
+        value: "Wedding Website",
+        featured: true,
+        content: {
+            en: {
+                title: "Wedding Website",
+                subtitle: "A digital wedding invitation with RSVP tracking, maps, and your full day schedule.",
+                price: "",
+                turnaround: "1–2 weeks",
+                badge: "Popular",
+                ctaLabel: "Select Wedding Site",
+                selectedLabel: "Selected Below",
+                includedTitle: "What’s included",
+                features: [
+                    "Bespoke design matched to your wedding theme and color palette",
+                    "Wedding date, time, and venue locations with interactive maps",
+                    "Live countdown timer leading up to the big day",
+                    "Guest RSVP confirmation form (attending / not attending)",
+                    "Schedule, dress code, photo gallery, and background music",
+                    "Easy-to-share link with zero printing or delivery costs",
+                ],
+            },
+            hy: {
+                title: "Հարսանեկան կայք",
+                subtitle: "Թվային հարսանեկան հրավիրատոմս՝ RSVP հաստատմամբ, քարտեզով և օրվա ամբողջ ծրագրով։",
+                price: "",
+                turnaround: "1–2 շաբաթ",
+                badge: "Պահանջված",
+                ctaLabel: "Ընտրել փաթեթը",
+                selectedLabel: "Ընտրված է ներքևում",
+                includedTitle: "Ինչ է ներառում",
+                features: [
+                    "Յուրահատուկ դիզայն՝ ձեր հարսանիքի թեմայով և գույներով",
+                    "Հարսանիքի ամսաթիվ, ժամ և վայր՝ քարտեզով",
+                    "Հետհաշվարկի ժամանակաչափ մինչև մեծ օրը",
+                    "Հյուրերի հաստատման ձև (կգա / չի գա)",
+                    "Ծրագիր, դրեսքոդ, լուսանկարներ և երաժշտություն",
+                    "Հարմար հղում՝ առանց տպագրության և առաքման ծախսերի",
+                ],
+            },
+        },
+    },
+    {
+        slug: "personal",
+        value: "Personal Portfolio",
+        content: {
+            en: {
+                title: "Personal Portfolio",
+                subtitle: "A tailored multi-section site for specialists, creators, and consultants.",
+                price: "",
+                turnaround: "1.5–3 weeks",
+                ctaLabel: "Select Portfolio",
+                selectedLabel: "Selected Below",
+                includedTitle: "What’s included",
+                features: [
+                    "Intro section highlighting your background, profession, and achievements",
+                    "Clear, engaging presentation of your services",
+                    "Portfolio or gallery showcasing your best work",
+                    "Client testimonials to build credibility and trust",
+                    "Contact section with phone, map, Instagram, WhatsApp, and Telegram",
+                    "Custom domain setup (e.g., yourname.am)",
+                    "Responsive design across mobile, tablet, and desktop",
+                    "Easy content management so you can update details anytime",
+                ],
+            },
+            hy: {
+                title: "Անձնական պորտֆոլիո",
+                subtitle: "Անհատական կայք մասնագետների, ստեղծագործողների և խորհրդատուների համար։",
+                price: "",
+                turnaround: "1.5–3 շաբաթ",
+                ctaLabel: "Ընտրել փաթեթը",
+                selectedLabel: "Ընտրված է ներքևում",
+                includedTitle: "Ինչ է ներառում",
+                features: [
+                    "Ներածական բաժին՝ ձեր մասին, մասնագիտության և ձեռքբերումների նկարագրությամբ",
+                    "Ծառայությունների ցանկ՝ հստակ և գրավիչ ներկայացմամբ",
+                    "Պորտֆոլիո կամ պատկերասրահ՝ ձեր լավագույն աշխատանքներով",
+                    "Հաճախորդների կարծիքներ, որոնք ավելացնում են վստահությունը",
+                    "Կապի բաժին՝ հեռախոս, քարտեզ, Instagram, WhatsApp, Telegram",
+                    "Սեփական դոմեյն (օր.՝ ձերանուն.am)",
+                    "Հարմարեցում բոլոր սարքերի համար՝ հեռախոս, պլանշետ, համակարգիչ",
+                    "Պարզ կառավարում՝ հնարավորություն թարմացնելու տվյալները",
+                ],
+            },
+        },
     },
 ];

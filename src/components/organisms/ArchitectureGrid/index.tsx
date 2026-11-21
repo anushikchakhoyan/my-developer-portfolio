@@ -1,6 +1,6 @@
 import React from "react";
 
-import {  SKILL_GROUPS } from "@/lib/data";
+import {  SKILL_GROUPS } from "@/config/data";
 
 export const ArchitectureGrid: React.FC = () => {
  

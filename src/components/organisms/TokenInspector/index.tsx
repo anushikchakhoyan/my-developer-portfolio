@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@/components/primitives/Button/Button";
+import { Button } from "@/components/primitives/Button";
 
 export const TokenInspector: React.FC = () => {
     const [hue, setHue] = useState<number>(307); // Default hue value

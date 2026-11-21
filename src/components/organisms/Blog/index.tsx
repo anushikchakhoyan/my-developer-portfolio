@@ -1,12 +1,10 @@
 "use client";
 
-import { siteConfig } from "@/config/site";
-import { Article, ARTICLES, Lang } from "@/lib/data";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-/* -------------------------------------------------------------------------- */
-/*  Language config                                                           */
-/* -------------------------------------------------------------------------- */
+import { siteConfig } from "@/config/site";
+import { Article, ARTICLES } from "@/config/data";
+import { FILTERS, formatDate, type Filter } from "@/config/utils";
 
 const LANG = {
     en: {
@@ -24,27 +22,6 @@ const LANG = {
         color: "var(--color-accent)",
     },
 } as const;
-
-type Filter = "all" | Lang;
-
-const FILTERS: { id: Filter; label: string; lang?: Lang }[] = [
-    { id: "all", label: "All" },
-    { id: "en", label: "English", lang: "en" },
-    { id: "hy", label: "Հայերեն", lang: "hy" },
-];
-
-const MONTHS: Record<Lang, string[]> = {
-    en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    hy: [
-        "հունվար", "փետրվար", "մարտ", "ապրիլ", "մայիս", "հունիս",
-        "հուլիս", "օգոստոս", "սեպտեմբեր", "հոկտեմբեր", "նոյեմբեր", "դեկտեմբեր",
-    ],
-};
-
-const formatDate = (iso: string, lang: Lang) => {
-    const [year, month] = iso.split("-").map(Number);
-    return `${MONTHS[lang][month - 1]} ${year}`;
-};
 
 const CARD_GAP = 16;
 
@@ -193,9 +170,9 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                                     <span
                                         lang={article.lang}
                                         className="rounded-md border border-current px-1.5 py-0.5 font-semibold tracking-wider"
-                                        style={{ color: cfg.color }}
+                                        style={{ color: cfg?.color ?? "inherit" }}
                                     >
-                                        {cfg.badge}
+                                        {cfg?.badge}
                                     </span>
                                     <span className="text-(--color-text-dim)">
                                         {formatDate(article.date, article.lang)}
@@ -204,7 +181,7 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                                         ·
                                     </span>
                                     <span lang={article.lang} className="text-(--color-text-dim)">
-                                        {cfg.minutes(article.readTime)}
+                                        {cfg?.minutes(article.readTime)}
                                     </span>
                                 </div>
 
@@ -235,9 +212,9 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                                     <span
                                         lang={article.lang}
                                         className="shrink-0 text-xs font-semibold whitespace-nowrap"
-                                        style={{ color: cfg.color }}
+                                        style={{ color: cfg?.color ?? "inherit" }}
                                     >
-                                        {cfg.cta}{" "}
+                                        {cfg?.cta}{" "}
                                         <span
                                             aria-hidden
                                             className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"

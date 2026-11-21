@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FaAngleDown, FaLeaf } from "react-icons/fa6";
 import { IoIosRocket } from "react-icons/io";
 
-import { CareerItem } from "@/lib/data";
+import { CareerItem } from "@/config/data";
 
 interface CareerAccordionProps {
     items: CareerItem[];

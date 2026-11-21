@@ -1,9 +1,9 @@
 import React from "react";
 
-import Marquee from "@/components/primitives/Marquee/Marquee";
-import { SKILL_GROUPS } from "@/lib/data";
+import Marquee from "@/components/primitives/Marquee";
+import { SKILL_GROUPS } from "@/config/data";
 
-import { ArchitectureGrid } from "../ArchitectureGrid/ArchitectureGrid";
+import { ArchitectureGrid } from "../ArchitectureGrid";
 
 // Marquee rows: groups 1-3 scroll left, groups 4-6 scroll right.
 const ROW_ONE = SKILL_GROUPS.slice(0, 3).flatMap((g) => g.skills);

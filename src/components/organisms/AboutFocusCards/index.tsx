@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import { Button } from "@/components/primitives/Button/Button";
+import { Button } from "@/components/primitives/Button";
 
 export const AboutFocusCards: React.FC = () => {
     return (

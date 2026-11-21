@@ -8,8 +8,8 @@ import { IoMdMailUnread } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 
-import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge/AvailabilityBadge";
-import { Button } from "@/components/primitives/Button/Button";
+import { AvailabilityBadge } from "@/components/primitives/AvailabilityBadge";
+import { Button } from "@/components/primitives/Button";
 import { siteConfig } from "@/config/site";
 
 export const ContactCard: React.FC = () => {
