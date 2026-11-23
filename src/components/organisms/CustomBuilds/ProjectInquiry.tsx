@@ -5,20 +5,19 @@ import * as Yup from "yup";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import { useSearchParams } from "next/navigation";
-
+import { useTranslations } from "next-intl";
 import { Formik, Form, type FormikHelpers } from "formik";
-import { BsSendFill } from "react-icons/bs";
 import { HiOutlineSparkles, HiOutlineMail } from "react-icons/hi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { BsSendFill } from "react-icons/bs";
 
 import InputField from "../../primitives/InputField";
 import { Button } from "@/components/primitives/Button";
 import { Textarea } from "@/components/primitives/Textarea";
 import PhoneField from "@/components/primitives/PhoneField";
 
+import { BUILD_PACKAGES, WebsiteType } from "@/config/data";
 import { siteConfig } from "@/config/site";
-
-export type WebsiteType = "Landing Page" | "Wedding Website" | "Personal Portfolio";
 
 interface InquiryFormValues {
     service: WebsiteType;
@@ -34,77 +33,38 @@ interface ProjectInquiryProps {
     onSelectType?: (type: WebsiteType) => void;
 }
 
-const WEBSITE_TYPES: {
-    slug: string;
-    value: WebsiteType;
-    label: string;
-    desc: string;
-}[] = [
-    {
-        slug: "landing",
-        value: "Landing Page",
-        label: "Landing Page",
-        desc: "Product, SaaS, or launch",
-    },
-    {
-        slug: "wedding",
-        value: "Wedding Website",
-        label: "Wedding Website",
-        desc: "Invites, RSVP & event details",
-    },
-    {
-        slug: "personal",
-        value: "Personal Portfolio",
-        label: "Personal Portfolio",
-        desc: "Showcase, resume & brand",
-    },
-];
-
-const NEXT_STEPS = [
-    {
-        step: "01",
-        title: "Scope & Timeline Review",
-        desc: "I'll review your goals and reply within 24 hours with a tailored plan.",
-    },
-    {
-        step: "02",
-        title: "Design & Architecture",
-        desc: "Pixel-accurate UI design and responsive frontend setup.",
-    },
-    {
-        step: "03",
-        title: "Build & Launch",
-        desc: "Fast, accessible delivery ready for your custom domain.",
-    },
-];
+const NEXT_STEPS_KEYS = ["01", "02", "03"] as const;
 
 function ProjectInquiryContent({
     selectedType,
     initialEmail,
     onSelectType,
 }: ProjectInquiryProps) {
+    const t = useTranslations("inquiry");
+    const tPackages = useTranslations("packages");
     const searchParams = useSearchParams();
+
     const typeParam = searchParams.get("type")?.toLowerCase();
     const emailParam = searchParams.get("email");
 
     const resolvedType: WebsiteType =
         selectedType ??
-        WEBSITE_TYPES.find((item) => item.slug === typeParam)?.value ??
+        BUILD_PACKAGES.find((item) => item.slug === typeParam)?.value ??
         "Landing Page";
 
     const resolvedEmail = initialEmail || emailParam || "";
 
     const validationSchema = Yup.object().shape({
-        service: Yup.string().required("Please select a website type"),
-        name: Yup.string().required("Full name is required"),
+        service: Yup.string().required(t("validation.serviceRequired")),
+        name: Yup.string().required(t("validation.nameRequired")),
         email: Yup.string()
             .matches(
                 /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                "Please enter a valid email address"
+                t("validation.emailInvalid")
             )
-            .required("Email is required"),
+            .required(t("validation.emailRequired")),
         phone: Yup.string().optional(),
-        message: Yup.string().required("Please share a few details about your project"),
+        message: Yup.string().required(t("validation.messageRequired")),
     });
 
     const initialValues: InquiryFormValues = {
@@ -136,9 +96,8 @@ function ProjectInquiryContent({
                 }
             );
 
-            toast("Inquiry received!", {
-                description:
-                    "Thank you for reaching out! I'll review your inquiry and get back to you within 24 hours.",
+            toast(t("toast.successTitle"), {
+                description: t("toast.successDesc"),
             });
 
             resetForm({
@@ -162,8 +121,8 @@ function ProjectInquiryContent({
                 fullError: error,
             });
 
-            toast("Failed to send inquiry", {
-                description: `Something went wrong. You can also email me directly at ${siteConfig.email}.`,
+            toast(t("toast.errorTitle"), {
+                description: t("toast.errorDesc", { email: siteConfig.email }),
             });
         } finally {
             setSubmitting(false);
@@ -182,34 +141,34 @@ function ProjectInquiryContent({
                         <div>
                             <div className="inline-flex items-center gap-1.5 font-mono text-[0.68rem] uppercase tracking-widest px-2.5 py-1 rounded-full border border-(--color-border) bg-(--color-surface) text-(--color-primary) mb-5">
                                 <HiOutlineSparkles size={13} />
-                                <span>Project Inquiry</span>
+                                <span>{t("badge")}</span>
                             </div>
 
                             <h3 className="font-serif text-2xl md:text-3xl text-(--color-text) mb-3 leading-snug">
-                                Tell me about what we&apos;re building.
+                                {t("heading")}
                             </h3>
 
                             <p className="text-sm text-(--color-text-muted) leading-relaxed mb-8">
-                                Share your timeline, goals, or inspiration links. Whether you&apos;re launching a product or planning an event, I&apos;ll tailor the build around your needs.
+                                {t("description")}
                             </p>
 
                             {/* Numbered Process Steps */}
                             <div className="space-y-4">
                                 <div className="font-mono text-[0.68rem] uppercase tracking-wider text-(--color-text-dim)">
-                                    What happens next
+                                    {t("nextStepsTitle")}
                                 </div>
                                 <ol className="space-y-3.5">
-                                    {NEXT_STEPS.map((item) => (
-                                        <li key={item.step} className="flex items-start gap-3">
+                                    {NEXT_STEPS_KEYS.map((stepNum) => (
+                                        <li key={stepNum} className="flex items-start gap-3">
                                             <span className="font-mono text-[0.7rem] text-(--color-primary) mt-0.5">
-                                                {item.step}
+                                                {stepNum}
                                             </span>
                                             <div>
                                                 <div className="text-xs font-medium text-(--color-text)">
-                                                    {item.title}
+                                                    {t(`steps.${stepNum}.title`)}
                                                 </div>
                                                 <p className="text-xs text-(--color-text-muted) leading-relaxed mt-0.5">
-                                                    {item.desc}
+                                                    {t(`steps.${stepNum}.desc`)}
                                                 </p>
                                             </div>
                                         </li>
@@ -226,7 +185,7 @@ function ProjectInquiryContent({
                                 </span>
                                 <div className="min-w-0">
                                     <div className="text-[0.68rem] font-mono uppercase tracking-wider text-(--color-text-dim)">
-                                        Prefer direct email?
+                                        {t("directEmailLabel")}
                                     </div>
                                     <a
                                         href={`mailto:${siteConfig.email}`}
@@ -247,109 +206,120 @@ function ProjectInquiryContent({
                             validationSchema={validationSchema}
                             onSubmit={handleSubmit}
                         >
-                            {({ isSubmitting, values, setFieldValue }) => (
-                                <Form className="flex flex-col gap-5 w-full">
-                                    {/* Website Type Selector */}
-                                    <div>
-                                        <div className="flex items-center justify-between mb-2.5">
-                                            <label className="font-mono text-[0.68rem] uppercase tracking-wider text-(--color-text-dim)">
-                                                01. Selected Package
-                                            </label>
-                                            <span className="font-mono text-[0.68rem] text-(--color-primary)">
-                                                {values.service}
+                            {({ isSubmitting, values, setFieldValue }) => {
+                                const activePkg = BUILD_PACKAGES.find(
+                                    (item) => item.value === values.service
+                                );
+
+                                return (
+                                    <Form className="flex flex-col gap-5 w-full">
+                                        {/* Website Type Selector */}
+                                        <div>
+                                            <div className="flex items-center justify-between mb-2.5">
+                                                <label className="font-mono text-[0.68rem] uppercase tracking-wider text-(--color-text-dim)">
+                                                    {t("selectedPackage")}
+                                                </label>
+                                                <span className="font-mono text-[0.68rem] text-(--color-primary)">
+                                                    {activePkg
+                                                        ? tPackages(`${activePkg.slug}.title`)
+                                                        : values.service}
+                                                </span>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                                                {BUILD_PACKAGES.map((pkg) => {
+                                                    const isSelected = values.service === pkg.value;
+                                                    const pkgTitle = tPackages(`${pkg.slug}.title`);
+                                                    const pkgSubtitle = tPackages(`${pkg.slug}.subtitle`);
+
+                                                    return (
+                                                        <button
+                                                            key={pkg.value}
+                                                            type="button"
+                                                            onClick={() => {
+                                                                setFieldValue("service", pkg.value);
+                                                                onSelectType?.(pkg.value);
+                                                            }}
+                                                            className={`group relative text-left p-3 rounded-lg border transition-all cursor-pointer ${
+                                                                isSelected
+                                                                    ? "border-(--color-primary) bg-[oklch(0.78_0.15_var(--accent-hue)/0.1)]"
+                                                                    : "border-(--color-border) bg-(--color-surface-hover)/50 hover:border-(--color-text-dim)"
+                                                            }`}
+                                                        >
+                                                            <div className="flex items-center justify-between gap-1.5 mb-1">
+                                                                <span
+                                                                    className={`text-xs font-medium transition-colors ${
+                                                                        isSelected
+                                                                            ? "text-(--color-primary)"
+                                                                            : "text-(--color-text)"
+                                                                    }`}
+                                                                >
+                                                                    {pkgTitle}
+                                                                </span>
+                                                                <span
+                                                                    className={`w-1.5 h-1.5 rounded-full transition-opacity ${
+                                                                        isSelected
+                                                                            ? "bg-(--color-primary) opacity-100"
+                                                                            : "bg-(--color-text-dim) opacity-0 group-hover:opacity-40"
+                                                                    }`}
+                                                                />
+                                                            </div>
+                                                            <div className="text-[0.68rem] text-(--color-text-muted) line-clamp-2 leading-snug">
+                                                                {pkgSubtitle}
+                                                            </div>
+                                                        </button>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+
+                                        {/* Contact Fields */}
+                                        <div className="space-y-4">
+                                            <div className="font-mono text-[0.68rem] uppercase tracking-wider text-(--color-text-dim)">
+                                                {t("yourDetails")}
+                                            </div>
+
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <InputField name="name" label={t("fields.name")} />
+                                                <InputField name="email" label={t("fields.email")} />
+                                            </div>
+
+                                            <PhoneField name="phone" label={t("fields.phone")} />
+
+                                            <InputField
+                                                as={Textarea}
+                                                name="message"
+                                                label={t("fields.message")}
+                                                className="resize-none h-28"
+                                            />
+                                        </div>
+
+                                        <div className="pt-1 flex flex-col sm:items-center sm:justify-between gap-3">
+                                            <Button
+                                                type="submit"
+                                                variant="primary"
+                                                disabled={isSubmitting}
+                                                icon={
+                                                    isSubmitting ? (
+                                                        <AiOutlineLoading3Quarters
+                                                            className="animate-spin"
+                                                            size={14}
+                                                        />
+                                                    ) : (
+                                                        <BsSendFill size={13} />
+                                                    )
+                                                }
+                                            >
+                                                {isSubmitting ? t("submitting") : t("submit")}
+                                            </Button>
+
+                                            <span className="text-[0.7rem] text-(--color-text-dim)">
+                                                {t("responseNote")}
                                             </span>
                                         </div>
-
-                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                                            {WEBSITE_TYPES.map((item) => {
-                                                const isSelected = values.service === item.value;
-                                                return (
-                                                    <button
-                                                        key={item.value}
-                                                        type="button"
-                                                        onClick={() => {
-                                                            setFieldValue("service", item.value);
-                                                            onSelectType?.(item.value);
-                                                        }}
-                                                        className={`group relative text-left p-3 rounded-lg border transition-all cursor-pointer ${
-                                                            isSelected
-                                                                ? "border-(--color-primary) bg-[oklch(0.78_0.15_var(--accent-hue)/0.1)]"
-                                                                : "border-(--color-border) bg-(--color-surface-hover)/50 hover:border-(--color-text-dim)"
-                                                        }`}
-                                                    >
-                                                        <div className="flex items-center justify-between gap-1.5 mb-1">
-                                                            <span
-                                                                className={`text-xs font-medium transition-colors ${
-                                                                    isSelected
-                                                                        ? "text-(--color-primary)"
-                                                                        : "text-(--color-text)"
-                                                                }`}
-                                                            >
-                                                                {item.label}
-                                                            </span>
-                                                            <span
-                                                                className={`w-1.5 h-1.5 rounded-full transition-opacity ${
-                                                                    isSelected
-                                                                        ? "bg-(--color-primary) opacity-100"
-                                                                        : "bg-(--color-text-dim) opacity-0 group-hover:opacity-40"
-                                                                }`}
-                                                            />
-                                                        </div>
-                                                        <div className="text-[0.68rem] text-(--color-text-muted) leading-snug">
-                                                            {item.desc}
-                                                        </div>
-                                                    </button>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-
-                                    {/* Contact Fields */}
-                                    <div className="space-y-4">
-                                        <div className="font-mono text-[0.68rem] uppercase tracking-wider text-(--color-text-dim)">
-                                            02. Your Details
-                                        </div>
-
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <InputField name="name" label="Full Name" />
-                                            <InputField name="email" label="Email Address" />
-                                        </div>
-
-                                        <PhoneField name="phone" label="Phone Number (Optional)" />
-
-                                        <InputField
-                                            as={Textarea}
-                                            name="message"
-                                            label="Project Details, Goals & Timeline"
-                                            className="resize-none h-28"
-                                        />
-                                    </div>
-
-                                    <div className="pt-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                                        <Button
-                                            type="submit"
-                                            variant="primary"
-                                            disabled={isSubmitting}
-                                            icon={
-                                                isSubmitting ? (
-                                                    <AiOutlineLoading3Quarters
-                                                        className="animate-spin"
-                                                        size={14}
-                                                    />
-                                                ) : (
-                                                    <BsSendFill size={13} />
-                                                )
-                                            }
-                                        >
-                                            {isSubmitting ? "Sending Inquiry..." : "Send Project Inquiry"}
-                                        </Button>
-
-                                        <span className="text-[0.7rem] text-(--color-text-dim)">
-                                            Typical response under 24h
-                                        </span>
-                                    </div>
-                                </Form>
-                            )}
+                                    </Form>
+                                );
+                            }}
                         </Formik>
                     </div>
                 </div>

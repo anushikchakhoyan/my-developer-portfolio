@@ -1,22 +1,32 @@
 "use client";
 
-import { BuildPackage, Locale } from "@/config/data";
+import { useTranslations } from "next-intl";
+import { BuildPackage } from "@/config/data";
 import { BsArrowDownRight, BsCheck2 } from "react-icons/bs";
 
 interface BuildPackageCardProps {
     pkg: BuildPackage;
-    locale?: Locale;
     isSelected: boolean;
     onSelect: (pkg: BuildPackage) => void;
 }
 
 export function BuildPackageCard({
     pkg,
-    locale = "en",
     isSelected,
     onSelect,
 }: BuildPackageCardProps) {
-    const content = pkg.content[locale];
+    const t = useTranslations("packages");
+    const slug = pkg.slug;
+
+    const title = t(`${slug}.title`);
+    const subtitle = t(`${slug}.subtitle`);
+    const price = t(`${slug}.price`);
+    const turnaround = t(`${slug}.turnaround`);
+    const badge = t(`${slug}.badge`);
+    const ctaLabel = t(`${slug}.ctaLabel`);
+    const selectedLabel = t(`${slug}.selectedLabel`);
+    const includedTitle = t(`${slug}.includedTitle`);
+    const features = t.raw(`${slug}.features`) as string[];
 
     return (
         <article
@@ -30,57 +40,48 @@ export function BuildPackageCard({
                     onSelect(pkg);
                 }
             }}
-            className={`group flex flex-col justify-between rounded-lg border p-6 transition-all cursor-pointer ${isSelected
+            className={`group flex flex-col justify-between rounded-lg border p-6 transition-all cursor-pointer ${
+                isSelected
                     ? "border-(--color-primary) bg-(--color-surface-hover)"
                     : "border-(--color-border) bg-(--color-surface) hover:border-(--color-primary) hover:bg-(--color-surface-hover)"
-                }`}
+            }`}
         >
             <div>
                 {/* Top Meta Row: Tag / Badge + Price & Turnaround Badges */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="font-mono text-[0.68rem] uppercase tracking-wider text-(--color-text-dim)">
-                        {content.tag ?? content.badge ?? pkg.slug}
+                        {badge || pkg.slug}
                     </span>
                     <div className="flex items-center gap-1.5">
-                        {content.price && (
+                        {price && (
                             <span className="font-mono text-[0.68rem] font-semibold px-2 py-0.5 rounded border border-(--color-border) bg-(--color-surface) text-(--color-text)">
-                                {content.price}
+                                {price}
                             </span>
                         )}
                         <span className="font-mono text-[0.68rem] px-2 py-0.5 rounded bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-accent)">
-                            {content.turnaround}
+                            {turnaround}
                         </span>
                     </div>
                 </div>
 
                 {/* Icon + Title */}
                 <div className="flex items-center gap-2.5 mb-2.5">
-                    {pkg.icon && (
-                        <div
-                            className={`w-8 h-8 rounded-md border flex items-center justify-center shrink-0 transition-colors ${isSelected
-                                    ? "border-(--color-primary) bg-[oklch(0.78_0.15_var(--accent-hue)/0.14)] text-(--color-primary)"
-                                    : "border-(--color-border) bg-(--color-surface-hover) text-(--color-primary) group-hover:border-(--color-primary)"
-                                }`}
-                        >
-                            {pkg.icon}
-                        </div>
-                    )}
                     <h3 className="font-serif text-xl text-(--color-text)">
-                        {content.title}
+                        {title}
                     </h3>
                 </div>
 
                 <p className="text-xs text-(--color-text-muted) leading-relaxed mb-5">
-                    {content.subtitle}
+                    {subtitle}
                 </p>
 
                 {/* What's Included List */}
                 <div className="border-t border-(--color-border) pt-4 mb-6">
                     <div className="font-mono text-[0.66rem] uppercase tracking-wider text-(--color-text-dim) mb-2.5">
-                        {content.includedTitle}
+                        {includedTitle}
                     </div>
                     <ul className="space-y-2">
-                        {content.features.map((item) => (
+                        {features.map((item) => (
                             <li
                                 key={item}
                                 className="flex items-start gap-2 text-xs text-(--color-text-muted) leading-snug"
@@ -98,11 +99,7 @@ export function BuildPackageCard({
 
             {/* Footer CTA */}
             <div className="flex items-center justify-between pt-3 border-t border-(--color-border)/60 text-xs font-mono uppercase tracking-wider text-(--color-primary)">
-                <span>
-                    {isSelected
-                        ? (content.selectedLabel ?? "Selected Below")
-                        : content.ctaLabel}
-                </span>
+                <span>{isSelected ? selectedLabel : ctaLabel}</span>
                 <BsArrowDownRight
                     size={14}
                     className="transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"

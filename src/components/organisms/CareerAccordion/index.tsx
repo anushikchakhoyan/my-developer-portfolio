@@ -1,10 +1,9 @@
 "use client";
 
+import { CareerItem } from "@/config/data";
 import React, { useState } from "react";
 import { FaAngleDown, FaLeaf } from "react-icons/fa6";
 import { IoIosRocket } from "react-icons/io";
-
-import { CareerItem } from "@/config/data";
 
 interface CareerAccordionProps {
     items: CareerItem[];
@@ -26,13 +25,13 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
             <div className="absolute left-[1.2rem] top-9 bottom-9 w-0.5 bg-linear-to-b from-(--color-primary) via-(--color-accent) to-[oklch(0.78_0.16_140)] -translate-x-1/2 z-0" />
             <div
                 className="absolute left-[1.2rem] top-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-(--color-primary) flex items-center justify-center text-(--color-primary) shadow-[0_0_16px_var(--color-primary-glow)] z-10"
-                title="Present / Active"
+                aria-hidden="true"
             >
                 <IoIosRocket size={17} />
             </div>
             <div
                 className="absolute left-[1.2rem] bottom-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-[oklch(0.78_0.16_140)] flex items-center justify-center text-[oklch(0.78_0.16_140)] shadow-[0_0_16px_rgba(0,0,0,0.3)] z-10"
-                title="Career Launch"
+                aria-hidden="true"
             >
                 <FaLeaf size={17} />
             </div>
@@ -44,6 +43,7 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                         className="rounded-md border border-(--color-border) bg-(--color-surface) overflow-hidden transition-all duration-200 hover:border-(--color-border-accent)"
                     >
                         <button
+                            type="button"
                             onClick={() => toggle(item.id)}
                             className="w-full text-left px-5 py-3.5 flex justify-between items-center cursor-pointer select-none"
                             aria-expanded={isOpen}
@@ -61,8 +61,9 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
                             </div>
                             <FaAngleDown
                                 size={18}
-                                className={`transition-transform duration-200 text-(--color-text-muted) ${isOpen ? "rotate-180 text-(--color-primary)" : ""
-                                    }`}
+                                className={`transition-transform duration-200 text-(--color-text-muted) ${
+                                    isOpen ? "rotate-180 text-(--color-primary)" : ""
+                                }`}
                             />
                         </button>
 
@@ -144,3 +145,5 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
         </div>
     );
 };
+
+export default CareerAccordion;

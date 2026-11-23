@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+
 import { Button } from "@/components/primitives/Button";
 import { TopNav } from "@/components/layout/TopNav";
 import { SidebarNav } from "@/components/layout/SidebarNav";
@@ -14,9 +16,18 @@ import { Blog } from "@/components/organisms/Blog";
 
 import { CAREER_DATA, TESTIMONIALS_DATA } from "@/config/data";
 
-export default function ShowcasePage() {
+export default async function ShowcasePage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
+    const t = await getTranslations("showcase");
+
     return (
-        <div className="relative w-full overflow-x-hidden">
+        <div id="top" className="relative w-full overflow-x-hidden">
             <TopNav />
             <SidebarNav />
             <main id="main-content">
@@ -27,19 +38,23 @@ export default function ShowcasePage() {
                 >
                     <div className="max-w-4xl">
                         <span className="font-mono text-sm tracking-[3px] text-(--color-accent) font-semibold mb-4 block">
-                            2018 → 2026 // PORTFOLIO
+                            {t("hero.eyebrow")}
                         </span>
                         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-(--color-text) mb-6 tracking-tight">
-                            I'm a UI Architect & <br /> Frontend Engineer
+                            {t("hero.titleLine1")} <br /> {t("hero.titleLine2")}
                         </h1>
                         <p className="text-base md:text-lg text-(--color-text-muted) mb-8 leading-relaxed max-w-3xl mx-auto">
-                            My focus is turning fast-moving product requirements into clean, maintainable component architecture —
-                            with design-system consistency, accessibility, and testing built in from the start.
+                            {t("hero.subtitle")}
                         </p>
-                        <div className="flex gap-4 justify-center">
+                        <div className="flex flex-wrap gap-4 justify-center">
                             <Link href="#contact">
                                 <Button variant="primary">
-                                    Contact Me
+                                    {t("hero.primaryCta")}
+                                </Button>
+                            </Link>
+                            <Link href="/project-request">
+                                <Button>
+                                    {t("hero.secondaryCta")}
                                 </Button>
                             </Link>
                         </div>
@@ -55,10 +70,10 @@ export default function ShowcasePage() {
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">02.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                About Me
+                                {t("about.title")}
                             </h2>
                             <p className="text-md text-(--color-text-muted) mt-1">
-                                A little about me and what I do.
+                                {t("about.subtitle")}
                             </p>
                         </header>
                         <AboutFocusCards />
@@ -74,10 +89,10 @@ export default function ShowcasePage() {
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">03.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                Career Timeline
+                                {t("career.title")}
                             </h2>
                             <p className="text-md text-(--color-text-muted) mt-1">
-                                7+ years of engineering impact across global companies and platforms.
+                                {t("career.subtitle")}
                             </p>
                         </header>
                         <CareerAccordion items={CAREER_DATA} defaultOpenId="brainrocket" />
@@ -93,10 +108,10 @@ export default function ShowcasePage() {
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">04.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                Testimonials
+                                {t("testimonials.title")}
                             </h2>
                             <p className="text-md text-(--color-text-muted) mt-1">
-                                Direct recommendations from engineering leads and directors.
+                                {t("testimonials.subtitle")}
                             </p>
                         </header>
                         <TestimonialSlider testimonials={TESTIMONIALS_DATA} />
@@ -112,10 +127,10 @@ export default function ShowcasePage() {
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">05.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                A live Design Token Inspector
+                                {t("tokens.title")}
                             </h2>
                             <p className="text-md text-(--color-text-muted) mt-1">
-                                Drag the hue slider and watch every component adapt.
+                                {t("tokens.subtitle")}
                             </p>
                         </header>
                         <TokenInspector />
@@ -131,10 +146,10 @@ export default function ShowcasePage() {
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">06.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                Core Skills & Technologies
+                                {t("skills.title")}
                             </h2>
                             <p className="text-sm text-(--color-text-muted) mt-1">
-                                Everything I use day to day, from code to deployment.
+                                {t("skills.subtitle")}
                             </p>
                         </header>
                         <Skills />
@@ -150,10 +165,10 @@ export default function ShowcasePage() {
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">07.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                Blog
+                                {t("blog.title")}
                             </h2>
                             <p className="text-sm text-(--color-text-muted) mt-1">
-                                My thoughts on design, development, and everything in between.
+                                {t("blog.subtitle")}
                             </p>
                         </header>
                         <Blog />
@@ -167,12 +182,12 @@ export default function ShowcasePage() {
                 >
                     <div className="max-w-4xl w-full">
                         <header className="mb-10 text-left">
-                            <span className="font-serif text-3xl text-(--color-primary) mr-2">07.</span>
+                            <span className="font-serif text-3xl text-(--color-primary) mr-2">08.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
-                                Contact &amp; Collaboration
+                                {t("contact.title")}
                             </h2>
                             <p className="text-sm text-(--color-text-muted) mt-1">
-                                Open for UI Architecture consultations, design system audits, and senior engineering roles.
+                                {t("contact.subtitle")}
                             </p>
                         </header>
                         <ContactCard />

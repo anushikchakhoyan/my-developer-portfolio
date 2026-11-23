@@ -1,18 +1,22 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { HiOutlineMail } from "react-icons/hi";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 import { siteConfig } from "@/config/site";
 
 const FOOTER_LINKS = [
-    { label: "Custom Builds", href: "#custom-builds" },
-    { label: "Career", href: "#career" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
+    { key: "customBuilds" as const, href: "/project-request#custom-builds" },
+    { key: "career" as const, href: "/#career" },
+    { key: "testimonials" as const, href: "/#testimonials" },
+    { key: "contact" as const, href: "/#contact" },
 ];
 
 export const Footer: React.FC = () => {
+    const t = useTranslations("footer");
     const currentYear = new Date().getFullYear();
 
     return (
@@ -26,19 +30,22 @@ export const Footer: React.FC = () => {
                             Anush Chakhoyan
                         </div>
                         <p className="font-mono text-xs text-(--color-text-muted)">
-                            Frontend engineering, design systems &amp; custom web builds.
+                            {t("tagline")}
                         </p>
                     </div>
 
                     {/* Navigation Links */}
-                    <nav aria-label="Footer navigation" className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                    <nav
+                        aria-label="Footer navigation"
+                        className="flex flex-wrap items-center gap-x-6 gap-y-2"
+                    >
                         {FOOTER_LINKS.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
                                 className="font-mono text-xs text-(--color-text-muted) hover:text-(--color-primary) transition-colors inline-flex items-center gap-1"
                             >
-                                <span>{item.label}</span>
+                                <span>{t(`links.${item.key}`)}</span>
                             </Link>
                         ))}
                         {siteConfig?.email && (
@@ -47,7 +54,7 @@ export const Footer: React.FC = () => {
                                 className="font-mono text-xs text-(--color-primary) hover:opacity-85 transition-opacity inline-flex items-center gap-1.5"
                             >
                                 <HiOutlineMail size={14} />
-                                <span>Email</span>
+                                <span>{t("email")}</span>
                                 <HiArrowUpRight size={12} />
                             </a>
                         )}
@@ -57,13 +64,13 @@ export const Footer: React.FC = () => {
                 {/* Bottom Bar */}
                 <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-(--color-text-dim)">
                     <div>
-                        &copy; {currentYear} Anush Chakhoyan. Built with Love.
+                        &copy; {currentYear} Anush Chakhoyan. {t("builtWithLove")}
                     </div>
                     <a
                         href="#top"
                         className="hover:text-(--color-text) transition-colors"
                     >
-                        Back to top &uarr;
+                        {t("backToTop")} &uarr;
                     </a>
                 </div>
             </div>

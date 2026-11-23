@@ -2,7 +2,9 @@
 
 import { Suspense, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
+import type { Locale } from "@/i18n/routing";
 import { BUILD_PACKAGES, BuildPackage, WebsiteType } from "@/config/data";
 
 import ProjectInquirySection from "./ProjectInquiry";
@@ -11,6 +13,9 @@ import { BuildPackageCard } from "./BuildPackageCard";
 function CustomBuildsContent() {
     const searchParams = useSearchParams();
     const formWrapperRef = useRef<HTMLDivElement>(null);
+
+    const locale = useLocale() as Locale;
+    const t = useTranslations("customBuilds");
 
     const typeParam = searchParams.get("type")?.toLowerCase();
     const emailParam = searchParams.get("email") ?? "";
@@ -31,13 +36,25 @@ function CustomBuildsContent() {
             className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
         >
             <div className="max-w-4xl w-full">
+                <header className="mb-12 text-left">
+                    <span className="font-serif text-3xl text-(--color-primary) mr-2">
+                        {t("number")}
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
+                        {t("title")}
+                    </h2>
+                    <p className="text-sm text-(--color-text-muted) mt-1">
+                        {t("subtitle")}
+                    </p>
+                </header>
+
                 <div className="mb-20">
                     <div className="mb-6 border-b border-(--color-border) pb-4">
                         <h3 className="text-xl md:text-2xl font-serif text-(--color-text)">
-                            Packages &amp; Starting Tiers
+                            {t("packagesTitle")}
                         </h3>
                         <p className="text-sm text-(--color-text-muted) mt-1">
-                            Select a package to pre-fill your project type and jump straight to the inquiry form.
+                            {t("packagesSubtitle")}
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -45,12 +62,14 @@ function CustomBuildsContent() {
                             <BuildPackageCard
                                 key={pkg.value}
                                 pkg={pkg}
+                                locale={locale}
                                 isSelected={selectedType === pkg.value}
                                 onSelect={handleSelectPackage}
                             />
                         ))}
                     </div>
                 </div>
+
                 <div ref={formWrapperRef}>
                     <ProjectInquirySection
                         selectedType={selectedType}

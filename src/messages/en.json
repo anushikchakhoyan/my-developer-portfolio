@@ -1,0 +1,224 @@
+{
+  "nav": {
+    "showcase": "Showcase",
+    "projectRequest": "Project Request",
+    "downloadCv": "Download CV",
+    "mobilePagesLabel": "Pages"
+  },
+  "customBuilds": {
+    "number": "01.",
+    "title": "Custom Website Builds",
+    "subtitle": "Landing pages, wedding sites, and personal portfolios—built from scratch.",
+    "packagesTitle": "Packages & Starting Tiers",
+    "packagesSubtitle": "Select a package to pre-fill your project type and jump straight to the inquiry form."
+  },
+  "showcase": {
+    "hero": {
+      "eyebrow": "2018 → 2026 // PORTFOLIO",
+      "titleLine1": "I'm a UI Architect &",
+      "titleLine2": "Frontend Engineer",
+      "subtitle": "My focus is turning fast-moving product requirements into clean, maintainable component architecture — with design-system consistency, accessibility, and testing built in from the start.",
+      "primaryCta": "Contact Me",
+      "secondaryCta": "Custom Website Builds"
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "A little about me and what I do."
+    },
+    "career": {
+      "title": "Career Timeline",
+      "subtitle": "7+ years of engineering impact across global companies and platforms."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "Direct recommendations from engineering leads and directors."
+    },
+    "tokens": {
+      "title": "A live Design Token Inspector",
+      "subtitle": "Drag the hue slider and watch every component adapt."
+    },
+    "skills": {
+      "title": "Core Skills & Technologies",
+      "subtitle": "Everything I use day to day, from code to deployment."
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "My thoughts on design, development, and everything in between."
+    },
+    "contact": {
+      "title": "Contact & Collaboration",
+      "subtitle": "Open for UI Architecture consultations, design system audits, and senior engineering roles."
+    }
+  },
+  "footer": {
+    "tagline": "Frontend engineering, design systems & custom web builds.",
+    "links": {
+      "customBuilds": "Custom Builds",
+      "career": "Career",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "email": "Email",
+    "builtWithLove": "Built with Love.",
+    "backToTop": "Back to top"
+  },
+  "sidebar": {
+    "intro": "Intro",
+    "aboutMe": "About me",
+    "career": "Career Timeline",
+    "testimonials": "Testimonials",
+    "liveDemo": "Live Demo",
+    "skills": "Skills",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "aboutFocus": {
+    "greeting": "Hey there, stranger.",
+    "tagline": "welcome to my corner of the web.",
+    "paragraph1": "I'm Anush, a UI Architect and Frontend Engineer with 7+ years turning messy product requirements into interfaces people actually enjoy using. Most of that time has been spent deep in React and TypeScript, building production UIs for iGaming, E-commerce, Admin tooling, and Edtech platforms.",
+    "paragraph2": "I'm fluent in the tools that make good UI work: Next.js/React.js for the app layer, Tailwind for styling, Storybook for component docs, Figma for handoff, plus a real focus on accessibility, testing, and design-system consistency. Lately I've been leaning into AI-assisted workflows to move faster without cutting corners.",
+    "paragraph3": "When I'm not shipping components, I'm usually refining my own tooling or exploring whatever's new in the frontend world.",
+    "cta": "Hire Me"
+  },
+  "inquiry": {
+    "badge": "Project Inquiry",
+    "heading": "Tell me about what we’re building.",
+    "description": "Share your timeline, goals, or inspiration links. Whether you’re launching a product or planning an event, I’ll tailor the build around your needs.",
+    "nextStepsTitle": "What happens next",
+    "steps": {
+      "01": {
+        "title": "Scope & Timeline Review",
+        "desc": "I'll review your goals and reply within 24 hours with a tailored plan."
+      },
+      "02": {
+        "title": "Design & Architecture",
+        "desc": "Pixel-accurate UI design and responsive frontend setup."
+      },
+      "03": {
+        "title": "Build & Launch",
+        "desc": "Fast, accessible delivery ready for your custom domain."
+      }
+    },
+    "directEmailLabel": "Prefer direct email?",
+    "selectedPackage": "01. Selected Package",
+    "yourDetails": "02. Your Details",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number (Optional)",
+      "message": "Project Details, Goals & Timeline"
+    },
+    "submit": "Send Project Inquiry",
+    "submitting": "Sending Inquiry...",
+    "responseNote": "Typical response under 24h",
+    "validation": {
+      "serviceRequired": "Please select a website type",
+      "nameRequired": "Full name is required",
+      "emailInvalid": "Please enter a valid email address",
+      "emailRequired": "Email is required",
+      "messageRequired": "Please share a few details about your project"
+    },
+    "toast": {
+      "successTitle": "Inquiry received!",
+      "successDesc": "Thank you for reaching out! I'll review your inquiry and get back to you within 24 hours.",
+      "errorTitle": "Failed to send inquiry",
+      "errorDesc": "Something went wrong. You can also email me directly at {email}."
+    }
+  },
+  "packages": {
+    "landing": {
+      "title": "Landing Page",
+      "subtitle": "A fast, conversion-focused single page built around your offer or launch.",
+      "price": "",
+      "turnaround": "5–10 days",
+      "badge": "",
+      "ctaLabel": "Select Landing Page",
+      "selectedLabel": "Selected Below",
+      "includedTitle": "What’s included",
+      "features": [
+        "Custom design tailored to your style and brand identity",
+        "Clear structure with overview, benefits, pricing, and testimonials",
+        "Direct contact form or buttons to Instagram, WhatsApp, or Telegram",
+        "Fully responsive layout for mobile and desktop screens",
+        "Fast load speeds, SEO essentials, and custom domain link"
+      ]
+    },
+    "wedding": {
+      "title": "Wedding Website",
+      "subtitle": "A digital wedding invitation with RSVP tracking, maps, and your full day schedule.",
+      "price": "",
+      "turnaround": "1–2 weeks",
+      "badge": "Popular",
+      "ctaLabel": "Select Wedding Site",
+      "selectedLabel": "Selected Below",
+      "includedTitle": "What’s included",
+      "features": [
+        "Bespoke design matched to your wedding theme and color palette",
+        "Wedding date, time, and venue locations with interactive maps",
+        "Live countdown timer leading up to the big day",
+        "Guest RSVP confirmation form (attending / not attending)",
+        "Schedule, dress code, photo gallery, and background music",
+        "Easy-to-share link with zero printing or delivery costs"
+      ]
+    },
+    "personal": {
+      "title": "Personal Portfolio",
+      "subtitle": "A tailored multi-section site for specialists, creators, and consultants.",
+      "price": "",
+      "turnaround": "1.5–3 weeks",
+      "badge": "",
+      "ctaLabel": "Select Portfolio",
+      "selectedLabel": "Selected Below",
+      "includedTitle": "What’s included",
+      "features": [
+        "Intro section highlighting your background, profession, and achievements",
+        "Clear, engaging presentation of your services",
+        "Portfolio or gallery showcasing your best work",
+        "Client testimonials to build credibility and trust",
+        "Contact section with phone, map, Instagram, WhatsApp, and Telegram",
+        "Custom domain setup (e.g., yourname.am)",
+        "Responsive design across mobile, tablet, and desktop",
+        "Easy content management so you can update details anytime"
+      ]
+    }
+  },
+  "contactCard": {
+    "heading": "Let's build something exceptional together.",
+    "description": "Whether it's a role, a side project, or just a question about frontend work, I'm always happy to connect and talk.",
+    "availability": "Currently Open for Senior UI Frontend Engineering Roles",
+    "scheduleCall": "Schedule a Call",
+    "sendMessage": "Send me a message",
+    "channelsTitle": "Direct Channels",
+    "directEmailLabel": "Direct Email",
+    "responseWindowLabel": "Response Window",
+    "responseWindowValue": "Under 24 Hours",
+    "locationLabel": "Location & Work Mode",
+    "locations": {
+      "worldwide": {
+        "region": "Worldwide",
+        "mode": "Remote"
+      },
+      "uae": {
+        "region": "United Arab Emirates (UAE)",
+        "mode": "Hybrid"
+      },
+      "armenia": {
+        "region": "Armenia",
+        "mode": "Onsite"
+      }
+    },
+    "linkedin": "Linkedin",
+    "linkedinLabel": "LinkedIn Profile",
+    "github": "Github",
+    "githubLabel": "GitHub Profile"
+  },
+  "skills": {
+    "marqueeAriaLabel": "All skills",
+    "education": {
+      "eyebrow": "// EDUCATION",
+      "degree": "Technology and Enterprise",
+      "institution": "Shirak State University, Armenia",
+      "period": "2017 – 2022"
+    }
+  }
+}

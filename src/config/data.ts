@@ -4,6 +4,21 @@ export type Locale = "en" | "hy";
 
 export type WebsiteType = "Landing Page" | "Wedding Website" | "Personal Portfolio";
 
+export interface CareerSubproject {
+    title: string;
+    period: string;
+    bullets: string[];
+    techStack: string[];
+}
+
+export interface CareerEntryContent {
+    role: string;
+    period: string;
+    location: string;
+    bullets: string[];
+    subprojects?: CareerSubproject[];
+}
+
 export interface CareerItem {
     id: string;
     company: string;
@@ -12,12 +27,7 @@ export interface CareerItem {
     location: string;
     bullets: string[];
     techStack: string[];
-    subprojects?: {
-        title: string;
-        period: string;
-        bullets: string[];
-        techStack: string[];
-    }[];
+    subprojects?: CareerSubproject[];
 }
 
 export interface TestimonialItem {
@@ -37,6 +47,7 @@ export interface SkillGroup {
     skills: string[];
     color: string;
 };
+
 
 export const CAREER_DATA: CareerItem[] = [
     {
@@ -370,135 +381,21 @@ export interface LocalizedBuildPackage {
 export interface BuildPackage {
     slug: "landing" | "wedding" | "personal";
     value: WebsiteType;
-    icon?: ReactNode;
     featured?: boolean;
-    content: Record<Locale, LocalizedBuildPackage>;
 }
 
 export const BUILD_PACKAGES: BuildPackage[] = [
     {
         slug: "landing",
         value: "Landing Page",
-        content: {
-            en: {
-                title: "Landing Page",
-                subtitle: "A fast, conversion-focused single page built around your offer or launch.",
-                price: "",
-                turnaround: "5–10 days",
-                ctaLabel: "Select Landing Page",
-                selectedLabel: "Selected Below",
-                includedTitle: "What’s included",
-                features: [
-                    "Custom design tailored to your style and brand identity",
-                    "Clear structure with overview, benefits, pricing, and testimonials",
-                    "Direct contact form or buttons to Instagram, WhatsApp, or Telegram",
-                    "Fully responsive layout for mobile and desktop screens",
-                    "Fast load speeds, SEO essentials, and custom domain link",
-                ],
-            },
-            hy: {
-                title: "Landing Page (Վայրէջքի էջ)",
-                subtitle: "Արագ և կենտրոնացված էջ՝ ձեր առաջարկի կամ ծառայության շուրջ հաճախորդներ ներգրավելու համար։",
-                price: "",
-                turnaround: "5–10 օր",
-                ctaLabel: "Ընտրել փաթեթը",
-                selectedLabel: "Ընտրված է ներքևում",
-                includedTitle: "Ինչ է ներառում",
-                features: [
-                    "Գրավիչ դիզայն՝ ձեր ոճին և բրենդին համապատասխան",
-                    "Հստակ կառուցվածք՝ նկարագրություն, առավելություններ, գներ, կարծիքներ",
-                    "Կապի ձև կամ կոճակ՝ ուղիղ դեպի Instagram, WhatsApp կամ Telegram",
-                    "Հարմարեցում հեռախոսի և համակարգչի համար",
-                    "Արագ բեռնում և սեփական հղում",
-                ],
-            },
-        },
     },
     {
         slug: "wedding",
         value: "Wedding Website",
         featured: true,
-        content: {
-            en: {
-                title: "Wedding Website",
-                subtitle: "A digital wedding invitation with RSVP tracking, maps, and your full day schedule.",
-                price: "",
-                turnaround: "1–2 weeks",
-                badge: "Popular",
-                ctaLabel: "Select Wedding Site",
-                selectedLabel: "Selected Below",
-                includedTitle: "What’s included",
-                features: [
-                    "Bespoke design matched to your wedding theme and color palette",
-                    "Wedding date, time, and venue locations with interactive maps",
-                    "Live countdown timer leading up to the big day",
-                    "Guest RSVP confirmation form (attending / not attending)",
-                    "Schedule, dress code, photo gallery, and background music",
-                    "Easy-to-share link with zero printing or delivery costs",
-                ],
-            },
-            hy: {
-                title: "Հարսանեկան կայք",
-                subtitle: "Թվային հարսանեկան հրավիրատոմս՝ RSVP հաստատմամբ, քարտեզով և օրվա ամբողջ ծրագրով։",
-                price: "",
-                turnaround: "1–2 շաբաթ",
-                badge: "Պահանջված",
-                ctaLabel: "Ընտրել փաթեթը",
-                selectedLabel: "Ընտրված է ներքևում",
-                includedTitle: "Ինչ է ներառում",
-                features: [
-                    "Յուրահատուկ դիզայն՝ ձեր հարսանիքի թեմայով և գույներով",
-                    "Հարսանիքի ամսաթիվ, ժամ և վայր՝ քարտեզով",
-                    "Հետհաշվարկի ժամանակաչափ մինչև մեծ օրը",
-                    "Հյուրերի հաստատման ձև (կգա / չի գա)",
-                    "Ծրագիր, դրեսքոդ, լուսանկարներ և երաժշտություն",
-                    "Հարմար հղում՝ առանց տպագրության և առաքման ծախսերի",
-                ],
-            },
-        },
     },
     {
         slug: "personal",
         value: "Personal Portfolio",
-        content: {
-            en: {
-                title: "Personal Portfolio",
-                subtitle: "A tailored multi-section site for specialists, creators, and consultants.",
-                price: "",
-                turnaround: "1.5–3 weeks",
-                ctaLabel: "Select Portfolio",
-                selectedLabel: "Selected Below",
-                includedTitle: "What’s included",
-                features: [
-                    "Intro section highlighting your background, profession, and achievements",
-                    "Clear, engaging presentation of your services",
-                    "Portfolio or gallery showcasing your best work",
-                    "Client testimonials to build credibility and trust",
-                    "Contact section with phone, map, Instagram, WhatsApp, and Telegram",
-                    "Custom domain setup (e.g., yourname.am)",
-                    "Responsive design across mobile, tablet, and desktop",
-                    "Easy content management so you can update details anytime",
-                ],
-            },
-            hy: {
-                title: "Անձնական պորտֆոլիո",
-                subtitle: "Անհատական կայք մասնագետների, ստեղծագործողների և խորհրդատուների համար։",
-                price: "",
-                turnaround: "1.5–3 շաբաթ",
-                ctaLabel: "Ընտրել փաթեթը",
-                selectedLabel: "Ընտրված է ներքևում",
-                includedTitle: "Ինչ է ներառում",
-                features: [
-                    "Ներածական բաժին՝ ձեր մասին, մասնագիտության և ձեռքբերումների նկարագրությամբ",
-                    "Ծառայությունների ցանկ՝ հստակ և գրավիչ ներկայացմամբ",
-                    "Պորտֆոլիո կամ պատկերասրահ՝ ձեր լավագույն աշխատանքներով",
-                    "Հաճախորդների կարծիքներ, որոնք ավելացնում են վստահությունը",
-                    "Կապի բաժին՝ հեռախոս, քարտեզ, Instagram, WhatsApp, Telegram",
-                    "Սեփական դոմեյն (օր.՝ ձերանուն.am)",
-                    "Հարմարեցում բոլոր սարքերի համար՝ հեռախոս, պլանշետ, համակարգիչ",
-                    "Պարզ կառավարում՝ հնարավորություն թարմացնելու տվյալները",
-                ],
-            },
-        },
     },
 ];
