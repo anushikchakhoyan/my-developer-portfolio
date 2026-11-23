@@ -62,7 +62,6 @@ function CustomBuildsContent() {
                             <BuildPackageCard
                                 key={pkg.value}
                                 pkg={pkg}
-                                locale={locale}
                                 isSelected={selectedType === pkg.value}
                                 onSelect={handleSelectPackage}
                             />
