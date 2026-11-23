@@ -68,7 +68,7 @@ export const TokenInspector: React.FC = () => {
                                 />
                             </td>
                             <td className="p-3 text-(--color-accent)">
-                                {t("table.roles.primary")}
+                                 {t("table.roles.primary")}
                             </td>
                         </tr>
                         <tr>
