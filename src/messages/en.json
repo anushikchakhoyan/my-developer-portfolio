@@ -220,5 +220,27 @@
       "institution": "Shirak State University, Armenia",
       "period": "2017 – 2022"
     }
+  },
+  "tokenInspector": {
+    "heading": "Live Token Inspector",
+    "description": "This portfolio dynamically computes colors using OKLCH color spaces. Tweak the hue parameter below to inspect dynamic real-time contrast calculations.",
+    "hueLabel": "Brand Hue",
+    "buttons": {
+      "primary": "Primary Action",
+      "outline": "Outline Action"
+    },
+    "table": {
+      "headers": {
+        "name": "Token Name",
+        "value": "Value / Syntax",
+        "swatch": "Swatch",
+        "role": "Role"
+      },
+      "roles": {
+        "primary": "Primary color",
+        "accent": "Secondary Sky Highlight & Badges",
+        "bg": "Canvas & Slide Background"
+      }
+    }
   }
 }
