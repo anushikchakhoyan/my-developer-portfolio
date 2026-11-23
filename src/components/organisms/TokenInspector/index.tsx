@@ -24,8 +24,6 @@ export const TokenInspector: React.FC = () => {
                     {t("description")}
                 </p>
             </div>
-
-            {/* Hue Range Slider */}
             <div className="flex items-center gap-4 mb-6 p-4 rounded-md border border-(--color-border) bg-(--color-bg)">
                 <label
                     htmlFor="brand-hue"
@@ -43,14 +41,10 @@ export const TokenInspector: React.FC = () => {
                     className="w-full accent-(--color-primary) cursor-pointer"
                 />
             </div>
-
-            {/* Button Roles Preview */}
             <div className="flex flex-wrap gap-3 mb-6">
                 <Button variant="primary">{t("buttons.primary")}</Button>
                 <Button variant="outline">{t("buttons.outline")}</Button>
             </div>
-
-            {/* Tokens Table */}
             <div className="overflow-x-auto rounded-md border border-(--color-border)">
                 <table className="w-full text-left text-xs font-mono">
                     <thead className="bg-(--color-surface-hover) border-b border-(--color-border) text-(--color-text-dim) uppercase tracking-wider">
