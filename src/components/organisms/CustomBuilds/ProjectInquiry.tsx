@@ -130,7 +130,7 @@ function ProjectInquiryContent({
     };
 
     return (
-        <section className="w-full max-w-4xl mx-auto">
+        <section className="w-full max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-xl border border-(--color-border) bg-(--color-surface)">
                 {/* Subtle top accent line */}
                 <div className="h-0.5 w-full bg-gradient-to-r from-(--color-primary) via-(--color-accent) to-transparent opacity-70" />
@@ -336,7 +336,7 @@ export function ProjectInquiry({
     return (
         <Suspense
             fallback={
-                <div className="w-full max-w-4xl mx-auto h-96 rounded-xl border border-(--color-border) bg-(--color-surface) animate-pulse" />
+                <div className="w-full max-w-5xl mx-auto h-96 rounded-xl border border-(--color-border) bg-(--color-surface) animate-pulse" />
             }
         >
             <ProjectInquiryContent

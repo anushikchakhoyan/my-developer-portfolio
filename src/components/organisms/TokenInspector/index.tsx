@@ -15,7 +15,7 @@ export const TokenInspector: React.FC = () => {
     };
 
     return (
-        <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6 md:p-8 max-w-4xl mx-auto w-full">
+        <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-6 md:p-8 max-w-5xl mx-auto w-full">
             <div className="mb-6 p-4 rounded-md bg-(--color-surface-hover) border-l-4 border-(--color-primary)">
                 <h3 className="font-bold text-base text-(--color-text) mb-1">
                     {t("heading")}

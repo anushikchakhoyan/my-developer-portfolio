@@ -10,7 +10,7 @@ export default function ProjectRequest() {
             <main id="main-content" className="pt-8">
                 <Suspense
                     fallback={
-                        <div className="w-full max-w-4xl mx-auto my-24 px-6">
+                        <div className="w-full max-w-5xl mx-auto my-24 px-6">
                             <div className="h-96 rounded-lg border border-(--color-border) bg-(--color-surface) animate-pulse" />
                         </div>
                     }

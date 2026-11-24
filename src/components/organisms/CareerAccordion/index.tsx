@@ -21,7 +21,7 @@ export const CareerAccordion: React.FC<CareerAccordionProps> = ({
     };
 
     return (
-        <div className="relative pl-14 flex flex-col gap-3.5 max-w-4xl mx-auto w-full">
+        <div className="relative pl-14 flex flex-col gap-3.5 max-w-5xl mx-auto w-full">
             <div className="absolute left-[1.2rem] top-9 bottom-9 w-0.5 bg-linear-to-b from-(--color-primary) via-(--color-accent) to-[oklch(0.78_0.16_140)] -translate-x-1/2 z-0" />
             <div
                 className="absolute left-[1.2rem] top-2 -translate-x-1/2 w-9 h-9 rounded-full bg-(--color-bg) border-2 border-(--color-primary) flex items-center justify-center text-(--color-primary) shadow-[0_0_16px_var(--color-primary-glow)] z-10"

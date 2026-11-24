@@ -13,7 +13,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonia
     const current = testimonials[index];
 
     return (
-        <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-8 md:p-10 max-w-4xl mx-auto w-full">
+        <div className="rounded-lg border border-(--color-border) bg-(--color-surface) p-8 md:p-10 max-w-5xl mx-auto w-full">
             <div className="flex justify-between items-center mb-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full font-mono text-xs tracking-wider font-bold text-(--color-accent) bg-[oklch(0.78_0.15_var(--accent-hue)/0.16)] border border-[oklch(0.78_0.15_var(--accent-hue)/0.45)]">
                     <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent)" />

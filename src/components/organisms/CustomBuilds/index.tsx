@@ -35,7 +35,7 @@ function CustomBuildsContent() {
             id="custom-builds"
             className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
         >
-            <div className="max-w-4xl w-full">
+            <div className="max-w-5xl w-full">
                 <header className="mb-12 text-left">
                     <span className="font-serif text-3xl text-(--color-primary) mr-2">
                         {t("number")}
@@ -85,7 +85,7 @@ export function CustomBuilds() {
     return (
         <Suspense
             fallback={
-                <div className="w-full max-w-4xl mx-auto h-96 rounded-lg border border-(--color-border) bg-(--color-surface) animate-pulse" />
+                <div className="w-full max-w-5xl mx-auto h-96 rounded-lg border border-(--color-border) bg-(--color-surface) animate-pulse" />
             }
         >
             <CustomBuildsContent />

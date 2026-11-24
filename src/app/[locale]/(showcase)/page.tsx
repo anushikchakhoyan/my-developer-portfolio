@@ -36,7 +36,7 @@ export default async function ShowcasePage({
                     id="intro"
                     className="min-h-screen w-full flex flex-col justify-center items-center text-center px-6 pt-24 pb-16"
                 >
-                    <div className="max-w-4xl">
+                    <div className="max-w-5xl">
                         <span className="font-mono text-sm tracking-[3px] text-(--color-accent) font-semibold mb-4 block">
                             {t("hero.eyebrow")}
                         </span>
@@ -66,7 +66,7 @@ export default async function ShowcasePage({
                     id="about-me"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">02.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
@@ -85,7 +85,7 @@ export default async function ShowcasePage({
                     id="career"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">03.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
@@ -104,7 +104,7 @@ export default async function ShowcasePage({
                     id="testimonials"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">04.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
@@ -123,7 +123,7 @@ export default async function ShowcasePage({
                     id="demo"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">05.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
@@ -142,7 +142,7 @@ export default async function ShowcasePage({
                     id="skills"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">06.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
@@ -161,7 +161,7 @@ export default async function ShowcasePage({
                     id="blog"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">07.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
@@ -180,7 +180,7 @@ export default async function ShowcasePage({
                     id="contact"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
-                    <div className="max-w-4xl w-full">
+                    <div className="max-w-5xl w-full">
                         <header className="mb-10 text-left">
                             <span className="font-serif text-3xl text-(--color-primary) mr-2">08.</span>
                             <h2 className="text-3xl md:text-4xl font-serif inline-block text-(--color-text)">
