@@ -8,7 +8,7 @@ const SLIDES = [
     { id: "about-me", key: "aboutMe" as const },
     { id: "career", key: "career" as const },
     { id: "testimonials", key: "testimonials" as const },
-    { id: "live-demo", key: "liveDemo" as const },
+    { id: "demo", key: "demo" as const },
     { id: "skills", key: "skills" as const },
     { id: "blog", key: "blog" as const },
     { id: "contact", key: "contact" as const },
@@ -41,7 +41,7 @@ export const SidebarNav: React.FC = () => {
     return (
         <nav
             aria-label="Section navigation"
-            className="fixed right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3.5 z-40"
+            className="fixed right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-1.5 z-40"
         >
             {SLIDES.map((s) => {
                 const label = t(s.key);

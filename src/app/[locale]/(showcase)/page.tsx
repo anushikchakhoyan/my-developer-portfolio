@@ -120,7 +120,7 @@ export default async function ShowcasePage({
 
                 {/* Slide 5: Design Tokens & Engine */}
                 <section
-                    id="live-demo"
+                    id="demo"
                     className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
                 >
                     <div className="max-w-4xl w-full">

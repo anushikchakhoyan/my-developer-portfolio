@@ -1,24 +1,26 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { siteConfig } from "@/config/site";
 import { Article, ARTICLES } from "@/config/data";
 import { FILTERS, formatDate, type Filter } from "@/config/utils";
+
+const INITIAL_COUNT = 6;
+const LOAD_MORE_STEP = 6;
 
 const LANG = {
     en: {
         badge: "EN",
         cta: "Read on Medium",
         minutes: (n: number) => `${n} min read`,
-        locale: "en-US",
         color: "var(--color-primary)",
     },
     hy: {
         badge: "ՀԱՅ",
         cta: "Կարդալ Medium-ում",
         minutes: (n: number) => `${n} րոպե`,
-        locale: "hy-AM",
         color: "var(--color-accent)",
     },
 } as const;
@@ -26,7 +28,9 @@ const LANG = {
 const CARD_GAP = 16;
 
 export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }) => {
+    const t = useTranslations("blog");
     const [filter, setFilter] = useState<Filter>("all");
+    const [limit, setLimit] = useState<number>(INITIAL_COUNT);
     const [active, setActive] = useState(0);
     const [touched, setTouched] = useState(false);
     const [inView, setInView] = useState(false);
@@ -38,10 +42,14 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
         () => [...articles].sort((a, b) => b.date.localeCompare(a.date)),
         [articles]
     );
-    const visible = useMemo(
+    const filtered = useMemo(
         () => (filter === "all" ? sorted : sorted.filter((a) => a.lang === filter)),
         [sorted, filter]
     );
+    const visible = useMemo(() => filtered.slice(0, limit), [filtered, limit]);
+    const remainingCount = Math.max(0, filtered.length - visible.length);
+    const hasMore = remainingCount > 0;
+
     const counts = useMemo(
         () => ({
             all: sorted.length,
@@ -71,11 +79,16 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
         return () => io.disconnect();
     }, []);
 
-    // Back to the first card when the filter changes
+    // Reset pagination and scroll to the first card when the filter changes
     useEffect(() => {
+        setLimit(INITIAL_COUNT);
         trackRef.current?.scrollTo({ left: 0 });
         setActive(0);
     }, [filter]);
+
+    const handleReadMore = () => {
+        setLimit((prev) => Math.min(prev + LOAD_MORE_STEP, filtered.length));
+    };
 
     const onScroll = () => {
         const el = trackRef.current;
@@ -104,7 +117,7 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div
                     role="group"
-                    aria-label="Filter articles by language"
+                    aria-label={t("filterAriaLabel")}
                     className="inline-flex rounded-full border border-(--color-border) bg-(--color-surface) p-1"
                 >
                     {FILTERS.map((f) => {
@@ -135,12 +148,12 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                     rel="noopener noreferrer"
                     className="font-mono text-xs text-(--color-text-muted) transition-colors hover:text-(--color-primary)"
                 >
-                    All articles on Medium ↗
+                    {t("allOnMedium")} ↗
                 </a>
             </div>
 
             <p className="sr-only" aria-live="polite">
-                Showing {visible.length} {visible.length === 1 ? "article" : "articles"}
+                {t("showingCount", { shown: visible.length, total: filtered.length })}
             </p>
 
             {/* Mobile: swipeable carousel. md+: grid. */}
@@ -163,7 +176,7 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                                 href={article.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label={`${article.title} (opens on Medium in a new tab)`}
+                                aria-label={t("openArticleAria", { title: article.title })}
                                 className="group gradient-border-hover flex h-full flex-col rounded-lg border border-(--color-border) bg-(--color-surface) p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary)"
                             >
                                 <div className="mb-3 flex items-center gap-2 font-mono text-xs">
@@ -199,7 +212,7 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                                 </p>
 
                                 <div className="mt-auto flex flex-col items-start gap-3">
-                                    <ul className="flex flex-wrap gap-1.5" aria-label="Topics">
+                                    <ul className="flex flex-wrap gap-1.5" aria-label={t("topicsAriaLabel")}>
                                         {article.tags?.map((tag) => (
                                             <li
                                                 key={tag}
@@ -229,21 +242,34 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                 })}
             </ul>
 
-            {visible.length === 0 && (
+            {filtered.length === 0 && (
                 <p className="py-10 text-center text-sm text-(--color-text-muted)">
-                    No articles in this language yet.
+                    {t("emptyState")}
                 </p>
+            )}
+
+            {/* Read more button when additional articles exist */}
+            {hasMore && (
+                <div className="mt-8 flex justify-center">
+                    <button
+                        type="button"
+                        onClick={handleReadMore}
+                        className="cursor-pointer rounded-full border border-(--color-border) bg-(--color-surface) px-5 py-2.5 font-mono text-xs font-medium text-(--color-text) transition-colors hover:border-(--color-primary) hover:text-(--color-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary)"
+                    >
+                        {t("readMore", { count: remainingCount })}
+                    </button>
+                </div>
             )}
 
             {/* Mobile only: position dots + swipe hint */}
             {visible.length > 1 && (
-                <div className="mt-1 flex items-center justify-between md:hidden">
+                <div className="mt-3 flex items-center justify-between md:hidden">
                     <div className="flex items-center gap-1.5">
                         {visible.map((a, i) => (
                             <button
                                 key={a.id}
                                 type="button"
-                                aria-label={`Go to article ${i + 1} of ${visible.length}`}
+                                aria-label={t("goToArticleAria", { index: i + 1, total: visible.length })}
                                 aria-current={i === active}
                                 onClick={() => goTo(i)}
                                 className={`h-1.5 cursor-pointer rounded-full transition-all duration-300 ${
@@ -258,7 +284,7 @@ export const Blog: React.FC<{ articles?: Article[] }> = ({ articles = ARTICLES }
                             touched ? "opacity-0" : "animate-pulse opacity-100"
                         }`}
                     >
-                        Swipe →
+                        {t("swipeHint")} →
                     </span>
                 </div>
             )}

@@ -67,7 +67,7 @@
     "aboutMe": "About me",
     "career": "Career Timeline",
     "testimonials": "Testimonials",
-    "liveDemo": "Live Demo",
+    "demo": "Live Demo",
     "skills": "Skills",
     "blog": "Blog",
     "contact": "Contact"
@@ -214,6 +214,38 @@
   },
   "skills": {
     "marqueeAriaLabel": "All skills",
+    "groups": {
+      "frontend": {
+        "step": "// FRONTEND",
+        "title": "React & Next.js",
+        "desc": "Production UIs built with strict TypeScript across React, Next.js and Svelte."
+      },
+      "styling": {
+        "step": "// STYLING",
+        "title": "Design Systems",
+        "desc": "Tokens, themes and reusable component libraries documented in Storybook."
+      },
+      "architecture": {
+        "step": "// ARCHITECTURE",
+        "title": "Scalable Systems",
+        "desc": "Micro frontends, rendering strategies and state patterns, tuned for Core Web Vitals."
+      },
+      "quality": {
+        "step": "// QUALITY",
+        "title": "a11y & Testing",
+        "desc": "WCAG-minded semantic markup backed by automated unit and end-to-end coverage."
+      },
+      "delivery": {
+        "step": "// DELIVERY",
+        "title": "Tooling & Cloud",
+        "desc": "Fast builds, enforced code quality and automated pipelines from commit to deploy."
+      },
+      "aiTeamwork": {
+        "step": "// AI & TEAMWORK",
+        "title": "AI-Assisted Delivery",
+        "desc": "LLM-assisted refactoring and prompt engineering, paired with mentoring and agile leadership."
+      }
+    },
     "education": {
       "eyebrow": "// EDUCATION",
       "degree": "Technology and Enterprise",
@@ -242,5 +274,16 @@
         "bg": "Canvas & Slide Background"
       }
     }
+  },
+  "blog": {
+    "filterAriaLabel": "Filter articles by language",
+    "allOnMedium": "All articles on Medium",
+    "showingCount": "Showing {shown} of {total} articles",
+    "openArticleAria": "{title} (opens on Medium in a new tab)",
+    "topicsAriaLabel": "Topics",
+    "emptyState": "No articles in this language yet.",
+    "readMore": "Read more ({count} more)",
+    "goToArticleAria": "Go to article {index} of {total}",
+    "swipeHint": "Swipe"
   }
 }
