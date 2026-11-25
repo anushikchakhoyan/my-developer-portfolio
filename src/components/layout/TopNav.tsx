@@ -86,7 +86,7 @@ export const TopNav: React.FC = () => {
                     onClick={() => setMobileMenuOpen(false)}
                     className="font-serif text-lg sm:text-xl xl:text-2xl text-(--color-text) hover:text-(--color-primary) transition-colors whitespace-nowrap shrink-0"
                 >
-                    Anush Chakhoyan
+                    Anush.
                 </Link>
 
                 {/* Desktop & Tablet Navigation */}

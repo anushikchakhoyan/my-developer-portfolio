@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
                 {/* Bottom Bar */}
                 <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-(--color-text-dim)">
                     <div>
-                        &copy; {currentYear} Anush Chakhoyan. {t("builtWithLove")}
+                        &copy; {currentYear} Anush. {t("builtWithLove")}
                     </div>
                     <a
                         href="#top"
